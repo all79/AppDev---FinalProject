@@ -1,4 +1,3 @@
-<?php require_once('header.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <!-- CSS Link -->
-    <link rel ="stylesheet" href = "header.css">
+    <link rel ="stylesheet" href = "./header.css">
     <!-- CSS Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <!-- Font-awesome link -->
@@ -19,10 +18,41 @@
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha512-SkkgT5pfwPhcDN7T+8CpSv96mrQtrlY5eFZI1PcZ6BD+KhtViZaOd57tK4gD1UryqK2Pq2PKXTNPo/WZtk6Ckw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
 </head>
 
 
 <body>
+    <div style="height: 30px; background-color: #fff;"></div>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light" style="height: 70px; background: #E6ECE2;">
+        <!-- Navbar Start -->
+        <div class="container-fluid">
+            <!-- Logo and Hospital Name -->
+            <a class="navbar-brand" href="index.php">
+                <img src="images/logo.png" width="50px" height="50px" class="ml-2" alt="Logo">
+                <span style="color: #1B4303; font-size: 30px; font-weight: bold ; font-family: League Gothic; margin-left: 10px">SUERO GENERAL HOSPITAL</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav text-md-right ms-auto">
+                    <a class="nav-link mx-2" href="services.php"
+                        style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;">Services</a>
+                    <a class="nav-link mx-2" href="#"
+                        style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;">Appointment</a>
+                    <a class="nav-link mx-2" href="#"
+                        style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;">Doctor</a>
+                    <a class="nav-link mx-2" href="#"
+                        style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;">About Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
         <!-- Carousel -->
      <div id="carouselExampleFade" class="carousel slide carousel-fade">
     <div class="carousel-inner">
@@ -56,8 +86,8 @@
 
     <br> <br> 
 
-    <div class="container mt-5 mb-5">
-        <div class="card">
+    <div class="choose">
+        <div class="card mx-">
             <div class="card-header text-center py-4" style="font-size: 24px; font-weight: bold; color: #1B4303;">Why Choose Us</div>
             <div class="card-body">
                 <p class="card-text" style="text-align: justify; font-size: 18px; font-family: Arial, sans-serif; color: #333;">
@@ -79,7 +109,7 @@
     <div class="container">
     <div class="row justify-content-around">
         <!-- Card 1 -->
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem; ">
             <img src="images/services.png" width="50px" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title text-center">Services</h5>
@@ -89,7 +119,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem; ">
             <img src="images/doctors.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title text-center">Doctor</h5>
@@ -108,14 +138,15 @@
             </div>
         </div>
         
-        </div> </div></div> </div>
+        </div> </div> </div>
+
 
         
         <!-- Location Map-->
-        <div class="location d-flex align-items-center">
-        <h1>Our Location</h1>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.964998416237!2d120.44962767897856!3d17.793342039756116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x338e8bf4752a50c9%3A0xb87ed16ee1a924b1!2sSuero%20General%20Hospital!5e0!3m2!1sen!2sph!4v1699886375802!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+        <div class="location d-flex justify-content-center ">
+            <h1  >Our Locations </h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.964998416237!2d120.44962767897856!3d17.793342039756116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x338e8bf4752a50c9%3A0xb87ed16ee1a924b1!2sSuero%20General%20Hospital!5e0!3m2!1sen!2sph!4v1699886375802!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 
    
 </body>

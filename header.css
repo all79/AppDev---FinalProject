@@ -1,3 +1,4 @@
+
 .carousel-inner {
   height: 500px;
   width: 500px;
@@ -7,22 +8,22 @@
 }
 .carousel-item img {
   object-fit: cover;
-  width: 100%;
+  width: 50%;
   height: 100%;
 }
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .carousel-inner {
     height: 300px;
   }
 }
 
-@media (min-width: 769px) and (max-width: 992px) {
+@media (min-width: 769px) and (max-width: 500px) {
   .carousel-inner {
     height: 400px;
   }
 }
 
-@media (min-width: 993px) {
+@media (min-width: 500px) {
   .carousel-inner {
     height: 500px;
   }
@@ -33,6 +34,8 @@
 }
 .location {
    height: 100vh;
+   border: 2px ;
+   border-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,4 +51,7 @@
 iframe {
   width: 77%;
   height: 500px;
+  border: 2px solid black;
+  border-color: black;
+
 }

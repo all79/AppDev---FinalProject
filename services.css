@@ -1,0 +1,22 @@
+.card{
+   border-radius:50px; 
+   max-height: 100%;
+   max-width: 90%;
+
+   display: flex; 
+   margin-left: 4;
+   margin-right: 4;
+   margin-top: 10;
+   margin-bottom: 10;
+   
+}
+.card:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 255, 0, 0.382); /* Green glow effect */
+}
+
+
+.card-img-top{
+    max-width: 20%;
+    height: auto;
+
+}

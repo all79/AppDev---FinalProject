@@ -7,24 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services</title>
     <!-- CSS Link -->
-    <link rel ="stylesheet" href = "services.css">
-    <!-- CSS Bootstrap Link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-    <!-- Font-awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" integrity="sha512-PgZKc0lCwo0sahsMcSQ9X9y0uzCyXLn1tGv/Jt+ZUCNqqMf2QsCnB+PkiHJpDdC1fBey+8Es1mZYfRZexmLJqw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel ="stylesheet" href="services.css">
+      <!-- CSS Bootstrap Link -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+      <!-- Font-awesome link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" integrity="sha512-PgZKc0lCwo0sahsMcSQ9X9y0uzCyXLn1tGv/Jt+ZUCNqqMf2QsCnB+PkiHJpDdC1fBey+8Es1mZYfRZexmLJqw=="  crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+ 
     <!-- Page Icon -->
-   <link rel="shortcut icon" href="images/Logo.png">
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link rel="shortcut icon" href="images/Logo.png">
+        <!-- Bootstrap -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha512-SkkgT5pfwPhcDN7T+8CpSv96mrQtrlY5eFZI1PcZ6BD+KhtViZaOd57tK4gD1UryqK2Pq2PKXTNPo/WZtk6Ckw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 
+
 <body>
+    <!-- Header -->
     <div style="height: 30px; background-color: #fff;"></div>
 
     <nav class="navbar navbar-expand-md  " style="height: 70px; background: #E6ECE2;">
@@ -56,6 +59,7 @@
     </nav>
 
     <br> <br> <br>
+    <!-- Out Patient Services -->
     <div class="first">
         <div class="container text-center">
             <h1>Out Patient Services</h1>
@@ -69,7 +73,7 @@
                       <h4 class="card-title my-2">ENT Department </h4>
                       <p class="card-text"> Specializes in the diagnosis and treatment of related to the ear, nose, throat, and head and neck.</p>
                       <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
-                      <a href="#" class="btn btn-primary">View Schedule</a>
+                      <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalENT">View Schedule</a>
 
                     </div>
                   </div>
@@ -83,7 +87,7 @@
                       <h4 class="card-title my-2">Opthamology Department</h4>
                       <p class="card-text-justify">  Specialized in the diagnosis and treatment of eye disorders, providing comprehensive eye care services.</p>
                       <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
-                      <a href="#" class="btn btn-primary">View Schedule</a>
+                      <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalOpt">View Schedule</a>
                     </div>
                   </div>
             </div>
@@ -95,7 +99,7 @@
                       <h4 class="card-title my-2">Pediatrics Department</h4>
                       <p class="card-text"> Focuses on the healthcare of infants, children, and adolescents, addressing a wide range of pediatric medical conditions. </p>
                       <a href="#" class="btn btn-success mx-3 my-3">Book Now</a>
-                      <a href="#" class="btn btn-primary">View Schedule</a>
+                      <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPedia">View Schedule</a>
 
                     </div>
                   </div>
@@ -106,7 +110,6 @@
 
 
 <br> <br> <br>
-        <div class="second">
             <div class="container text-center">
                 <div class="row">
                 <div class="col">
@@ -117,7 +120,7 @@
                           <h4 class="card-title my-2"> Cardiology Department  </h4>
                           <p class="card-text">Specializes in the diagnosis and treatment of heart-related conditions, including cardiovascular diseases and disorders.</p>
                           <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
-                          <a href="#" class="btn btn-primary">View Schedule</a>
+                          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCardio">View Schedule</a>
 
                         </div>
                       </div>
@@ -131,7 +134,7 @@
                           <h4 class="card-title my-2"> OB-Gyne Department </h4>
                           <p class="card-text">Addresses women's reproductive health, encompassing obstetrics for pregnancy and childbirth and gynecology for overall reproductive system care.</p>
                           <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
-                          <a href="#" class="btn btn-primary">View Schedule</a>
+                          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalOBG">View Schedule</a>
 
                         </div>
                       </div>
@@ -144,16 +147,15 @@
                           <h4 class="card-title my-2">Pulmonology Department </h4>
                           <p class="card-text">Specializes in the diagnosis and treatment of respiratory disorders, including diseases of the lungs and airways.</p>
                           <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
-                          <a href="#" class="btn btn-primary">View Schedule</a>
+                          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPulmo">View Schedule</a>
 
                         </div>
                       </div>
                 </div>
             </div>
         </div>
- </div>
 <br> <br> <br>
-
+<!-- Radiology Services -->
     <div class="container text-center">
         <h1>Radiology Services</h1>
     <br>
@@ -166,7 +168,7 @@
                   <h4 class="card-title my-2">Ultrasound  </h4>
                   <p class="card-text"> Employed for real-time imaging, crucial in obstetrics, abdominal, and vascular assessments.aiding in the diagnosis of various medical conditions, especially in obstetrics, abdominal, and vascular imaging</p>
                   <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
-                  <a href="#" class="btn btn-primary">View Schedule</a>
+                  <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUltra">View Schedule</a>
 
                 </div>
               </div>
@@ -175,14 +177,16 @@
         <div class="col">
             <div class="card w-70 h-100">
                 <div class="card-body">
-                 <img src="images/xray.jfif"  class="card-img-top private" alt="...">
-
-                  <h4 class="card-title my-2">X-ray</h4>
-                  <p class="card-text-justify">  Providing immediate insights into fractures, chest issues, internal structures of the body, commonly used for detecting fractures, assessing chest conditions, and visualizing skeletal abnormalities.</p>
-                  <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
-                  <a href="#" class="btn btn-primary">View Schedule</a>
+                    <img src="images/xray.jfif"  class="card-img-top private" alt="...">
+                    <h4 class="card-title my-2">X-ray</h4>
+                    <p class="card-text-justify">
+                        Providing immediate insights into fractures, chest issues, internal structures of the body, commonly used for detecting fractures, assessing chest conditions, and visualizing skeletal abnormalities.
+                    </p>
+                    <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
+                    <!-- Corrected data-bs-target to #modalXray -->
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalXray">View Schedule</a>
                 </div>
-              </div>
+            </div>
         </div>
         <div class="col">
             <div class="card w-70 h-100">
@@ -192,7 +196,7 @@
                   <h4 class="card-title my-2">CT Scan</h4>
                   <p class="card-text"> Uses X-rays to generate detailed cross-sectional images of the body, providing a more comprehensive view than traditional X-rays and enabling precise diagnosis of conditions affecting the head, chest, abdomen, and extremities. </p>
                   <a href="#" class="btn btn-success mx-3 my-3">Book Now</a>
-                  <a href="#" class="btn btn-primary">View Schedule</a>
+                  <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCT">View Schedule</a>
 
                 </div>
               </div>
@@ -200,15 +204,194 @@
     </div>
 </div>
 
-<style>
-    
 
-    .image-div img{
-        width: 100%;
-        height: 100%
-    }
+<!-- Modal for ENT Department -->
+<div class="modal fade" id="modalENT" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #91d167;">
+                <h2 class="modal-title" style="color: #fff;">ENT Department Schedule</h2>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">Operating Hours</h4>
+                <br>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> M-W-F 8 am to 9am</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> M-W-F 10am-11am</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i>  M-W-F 1pm - 3pm</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> 
 
-</style>
+<!-- Modal for Opthamology Department -->
+<div class="modal fade" id="modalOpt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #91d167;">
+                <h2 class="modal-title" style="color: #fff;">Opthamology Department Schedule</h2>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">Operating Hours</h4>
+                <br>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> T-TH-S 10am to 11am</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> T-Th-S 1pm to 2pm</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i>  T-TH-S 3pm to 4pm</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> 
 
+<!-- Modal for Pediatrics Department -->
+<div class="modal fade" id="modalPedia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #91d167;">
+                <h2 class="modal-title" style="color: #fff;">Pediatrics Department Schedule</h2>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">Operating Hours</h4>
+                <br>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> M-W-F 10am to 11am</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> M-W-F 12pm to 1pm</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i>  T-TH-S 3pm to 4pm</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<!-- Modal for Cardiology Department -->
+<div class="modal fade" id="modalCardio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #91d167;">
+                <h2 class="modal-title" style="color: #fff;">Cardiology Department Schedule</h2>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">Operating Hours</h4>
+                <br>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> T-TH-S 10am to 11am</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> T-Th-S 1pm to 2pm</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i>  T-TH-S 3pm to 4pm</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<!-- Modal for OB-Gyne Department -->
+<div class="modal fade" id="modalOBG" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #91d167;">
+                <h2 class="modal-title" style="color: #fff;">OB-Gyne Department Schedule</h2>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">Operating Hours</h4>
+                <br>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> M-W-F 10am to 11am</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> M-W-F 12pm to 1pm</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i>  T-TH-S 3pm to 4pm</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<!-- Modal for Pulmonology Department -->
+<div class="modal fade" id="modalPulmo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #91d167;">
+                <h2 class="modal-title" style="color: #fff;">Pulmonology Department Schedule</h2>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">Operating Hours</h4>
+                <br>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> M-W-F 10am to 11am</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> M-W-F 12pm to 1pm</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i>  T-TH-S 3pm to 4pm</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<!-- Modal for Ultrasound -->
+<div class="modal fade" id="modalUltra" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #91d167;">
+                <h2 class="modal-title" style="color: #fff;">Ultrasound Schedule</h2>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">Operating Hours</h4>
+                <br>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> Mon - Fri, 8am to 11am </h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> Mon - Fri, 1pm to 4pm </h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> Mon - Fri, 6pm to 8pm </h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Xray -->
+<div class="modal fade" id="modalXray" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #91d167;">
+                <h2 class="modal-title" style="color: #fff;">X-Ray Schedule</h2>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">Operating Hours</h4>
+                <br>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> Mon - Fri, 8am to 11am </h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> Mon - Fri, 1pm to 4pm </h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> Mon - Fri, 6pm to 8pm </h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for CT Scan -->
+<div class="modal fade" id="modalCT" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #91d167;">
+                <h2 class="modal-title" style="color: #fff;">CT Scan Schedule</h2>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">Operating Hours</h4>
+                <br>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> Mon - Fri, 8am to 11am </h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> Mon - Fri, 1pm to 4pm </h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> Mon - Fri, 6pm to 8pm </h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </body>

@@ -1,0 +1,55 @@
+.footer_bg{
+    width: 100%;
+    background-color: #DCDCDC;
+    padding-top: 25px;
+}
+table{
+    margin-left: 200px;
+    margin-right: 150px;
+    border-width: 1;
+}
+.footer_left{
+    width: 60%;
+    margin-top: 50px;
+}
+.footer_mid{
+    width: 30%;
+}
+.footer_right{
+    width: 30%;
+}
+.sgh {
+    display: inline-block;
+    color: #1B4303; 
+    font-size: 20px; 
+    font-weight: bold; 
+    font-family: League Gothic; 
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+}
+.address{
+    text-align: justify;
+    width: 10px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 100px;
+}
+.appointment{
+    margin: 1px;
+}
+.footer_mid_table{
+    margin-right: 10px;
+}
+.footer_mid_table{
+    margin-left: 0px;
+    padding: 100px;
+}
+.footer_mid_cell{
+    padding-top: 0px;
+}
+.services{
+    padding-bottom: 3px;
+}
+.doctor{
+    padding-bottom: 3px;
+}

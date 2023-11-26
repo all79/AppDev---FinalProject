@@ -1,8 +1,8 @@
+
 .card{
    border-radius:50px; 
-   max-height: 100%;
-   max-width: 90%;
-
+   /* height: 60px; */
+   width: 100%;
    display: flex; 
    margin-left: 4;
    margin-right: 4;
@@ -13,10 +13,40 @@
 .card:hover {
     box-shadow: 0 0 10px 0 rgba(0, 255, 0, 0.382); /* Green glow effect */
 }
+ .ambulance{
+    height:50%
+ }
+ .emergency{
+    height:50%
+ }
+ .labor{
+    height:50%
+ }
+ .opd{
+    height:50%
+ }
+ .private{
+    height:50%
+
+ }
+ .or{
+    height:50%
+ }
+ .lab{
+    height:50%
+
+ }
+ .rad{
+    height:50%
+ 
+ }
 
 
-.card-img-top{
-    max-width: 20%;
-    height: auto;
+ 
+ .btn-success{
+    margin-bottom: 50;
+ }
 
-}
+
+ 
+

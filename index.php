@@ -8,6 +8,7 @@
     <title>Home</title>
     <!-- CSS Link -->
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
     <!-- CSS Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <!-- Font-awesome link -->
@@ -38,7 +39,7 @@
                 <div class="navbar-nav text-md-right ms-auto mx-4">
                     <a class="nav-link mx-2" href="services.html"
                         style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;">Services</a>
-                    <a class="nav-link mx-2" href="#"
+                    <a class="nav-link mx-2" href="appointment.php"
                         style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;">Appointment</a>
                     <a class="nav-link mx-2" href="#"
                         style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;">Doctor</a>
@@ -139,13 +140,16 @@
         <div class="location d-flex justify-content-center">
             <h1 style="font-size: 30px; font-weight: bold; color: #1B4303;">Our Location </h1>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.964998416237!2d120.44962767897856!3d17.793342039756116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x338e8bf4752a50c9%3A0xb87ed16ee1a924b1!2sSuero%20General%20Hospital!5e0!3m2!1sen!2sph!4v1699886375802!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        </div>    
+    </div>
+
+    
+        
 
 
 
-
-            
-        </div>
+    <!--FOOTER-->
+    <?php include 'footer.php'; ?>
+    <!-- <div style="height: 100px;" class="footer_bg"></div> -->
     </body>
-
 </html>

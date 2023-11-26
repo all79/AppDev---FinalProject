@@ -1,30 +1,23 @@
-//APPOINTMENT PAGE
-
-<?php require_once('header.php'); ?>
-
 <!DOCTYPE html>
 <?php
 
     //PHP MAILER
-    /*use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
     require './PHPMailer/src/Exception.php';
     require './PHPMailer/src/PHPMailer.php';
-    require './PHPMailer/src/SMTP.php'; */
+    require './PHPMailer/src/SMTP.php'; 
 
     //ORDER FORM
     if (isset($_POST['submitbtn'])) {
-        $compname = $_POST['name'];
-        $contact_person = $_POST['person'];
+        $lastname = $_POST['lname'];
+        $firstname = $_POST['fname'];
         $contact_num = $_POST['phone'];
         $email = $_POST['email'];
         $address = $_POST['address'];
-        $city = $_POST['city'];
-        $province = $_POST['province'];
-        $zip = $_POST['zip'];
         $item_selected = $_POST['selected-item'];
-        $item_amount = $_POST['quantity'];
+        $item_amount = $_POST['schedule'];
         $totalAmount = 0;
         $itemTotalPrice = array();
 
@@ -61,8 +54,8 @@
                 //$itemTotalPrice[$i] = $itemTotal;
                 //$newTotal = $itemTotalPrice[$i];
 
-            $insertOrderSQL = "INSERT INTO `Order` (product_id, customer_id, quantity) VALUES ($product_id, $customer_id, $amount)";
-            executeQuery($insertOrderSQL); 
+            // $insertOrderSQL = "INSERT INTO `Order` (product_id, customer_id, quantity) VALUES ($product_id, $customer_id, $amount)";
+            // executeQuery($insertOrderSQL); 
         }
 
         //Total Amount of the ordered items
@@ -79,24 +72,24 @@
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'tiffanyjaydeenterprisesph@gmail.com';  //SMTP username
-            $mail->Password   = 'yfgbukyunhvqngkv';                               //SMTP password
+            $mail->Username   = 'suerogeneralhospital0@gmail.com';      //SMTP username
+            $mail->Password   = 'yfgbukyunhvqngkv';                     //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //RECIPIENT
-            $mail->setFrom('from@example.com', 'Tiffany Jayde Enterprises');
+            $mail->setFrom('from@example.com', 'Suero General Hospital');
             $mail->addAddress($email);                                  //Recipient of email from forms input
 
 
-            $email_message = "<h1><center>Tiffany Jayde Enterprises</center></h1>
+            $email_message = "<h1><center>Suero General Hospital</center></h1>
                     <h3><center>We have received your order!</center></h3>
-                    <p><center>Hi there, $contact_person, <br><br>Thank you for shopping with us. We hope you enjoy your order!</center><p/>
+                    <p><center>Hi there, $firstname, <br><br>Thank you for shopping with us. We hope you enjoy your order!</center><p/>
                     <div>
                     <table style='display: flex; justify-content: center;'>
                         <tr>
                             <td><strong>Order/s: </strong></td>
-                            <td><strong>Quantity: </strong></td>
+                            <td><strong>Schedule: </strong></td>
                             <td><strong>Price: </strong></td>
                         </tr>";
 
@@ -121,12 +114,6 @@
                         <td>$address</td>
                         <td></td>
                         <td>$totalAmount</td>
-                    </tr>
-                    <tr>
-                        <td>$province</td>
-                    </tr>
-                    <tr>
-                        <td>$city</td>
                     </tr>
                 </table>";
 
@@ -170,8 +157,43 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+        <!-- FOOTER -->
+        <link rel="stylesheet" href="footer.css">
+        <link rel="stylesheet" href="appointment.css">
+
+
     </head>
     <body>
+        <!-- HEADER-->
+        <div style="height: 30px; background-color: #fff;"></div>
+
+        <nav class="navbar navbar-expand-md  " style="height: 70px; background: #E6ECE2;">
+            <!-- Navbar Start -->
+            <div class="container-fluid mx-4">
+                <!-- Logo and Hospital Name -->
+                <a class="navbar-brand mx-4" href="index.html">
+                    <img src="images/logo.png" width="50px" height="50px" class="ml-2" alt="Logo">
+                    <span style="color: #1B4303; font-size: 30px; font-weight: bold ; font-family: League Gothic; margin-left: 10px">SUERO GENERAL HOSPITAL</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse mx-6" id="navbarNavAltMarkup">
+                    <div class="navbar-nav text-md-right ms-auto mx-4">
+                        <a class="nav-link mx-2" href="services.html"
+                        style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;" target="_blank">Services</a>
+                        <a class="nav-link mx-2" href="#"
+                            style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;"target="_blank">Appointment</a>
+                        <a class="nav-link mx-2" href="#"
+                            style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;" target="_blank">Doctor</a>
+                        <a class="nav-link mx-2" href="#"
+                            style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;" target="_blank">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav><br>
         <!--PS DIVIDER-->
         <div class="app_div">
             <!-- OUT PATIENT SERVICES -->
@@ -186,10 +208,12 @@
                     </p>
                 </div>
             </div>
+
+
             <!-- APPOINTMENT FORM -->
             <div class="form-container">
                 <form action="" method="POST" onsubmit="return validateForm()">
-                <div class="container">
+                <div class="container" style="height: 570px;">
                     <br></br>
                     <img src="images/logo.png" alt="logo" id="logo">
                     <h3 class="sgh">SUERO GENERAL HOSPITAL</h3><br></br>
@@ -201,51 +225,49 @@
                             <input class="form-control mb-2" type="text" name="email" id="inp4" placeholder="Email" required>
                             <input class="form-control mb-2" type="text" name="address" id="inp5" placeholder="Home Address" required>
                         </div>
-                                                    <!-- Item -->
-                        <div id="form" class="mb-2">
-                                <label for="Item"><strong>Item:</strong></label>
-                                <select class="form-control selected-item" name="selected-item[]" id="item">
+                        
+
+                        <!-- SERVICES DROPDOWN -->
+                        <div id="service_dd" class="col-md-6">
+                                <label for="service_opt" class="service"><strong>Service:</strong></label>
+                                <select class="form-control selected-item" name="selected-item[]" id="service_opt">
                                     <option value="0">-- Please Select --</option>
-                                    <option value="BIOELAB AS-280 Fully Auto Chemistry Analyze">BIOELAB AS-280 Fully Auto Chemistry Analyze</option>
-                                    <option value="ZYBIO Z3  HEMATOLOGY ANALYZER">ZYBIO Z3 HEMATOLOGY ANALYZER</option>
-                                    <option value="EOSCARE IMMUNO ANALYZER">EOSCARE IMMUNO ANALYZER</option>
-                                    <option value="EASYLYTE EXPAND ANALYZER">EASYLYTE EXPAND ANALYZER</option>
-                                    <option value="KHB202 COAGULOMETER">KHB202 COAGULOMETER </option>
-                                    <option value="6MINDRAY BC 30 FULLY AUTO HEMA ANALYZER">MINDRAY BC 30 FULLY AUTO HEMA ANALYZER</option>
-                                    <option value="GENRUI GE500 ELECTROLYTE ANALYZER">GENRUI GE500 ELECTROLYTE ANALYZER </option>
+                                    <option value="Laboratory Services">Laboratory Services</option>
+                                    <option value="Radiology Services">Radiology Services</option>
+                                    <option value="AUM">Advanced Ultrasound Machine with 2-D Echo</option>
+                                    <option value="Labor and Delivery Rooms">Labor and Delivery Rooms</option>
+                                    <option value="Emergency Room">Emergency Room </option>
+                                    <option value="Ambulance Services">Ambulance Services</option>
+                                    <option value="Out Patient Department">Out Patient Department </option>
+                                    <option value="Private Rooms">Private Rooms</option>
+                                    <option value="Operating Rooms">Operating Rooms</option>
+                                    <option value="Operating Rooms">Operating Rooms</option>
                                 </select>
 
-                                <!-- Quantity -->
-                                <label for="quantity"><strong>Select Quantity:</strong></label>
-                                <select class="form-control" name="quantity[]" id="quantity">
+                                <!-- SCHEDULE DROPDOWN -->
+                                <label for="schedule" class="schedule"><strong>Select Schedule:</strong></label>
+                                <select class="form-control" name="schedule[]" id="schedule">
                                     <?php for ($i = 1; $i <= 10; $i++) { ?>
                                         <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                                     <?php } ?>
                                 </select>
+                            
 
-
-                        <div class="col-md-6">
-                            <div class="text-end" >
-                                <input class="mb-2 ms-auto btn btn-dark" type="button" id="add-product" value="Add another product">
-                            </div>
-
-
-
-                               
-                            </div>
-                        </div>
+                            <!-- BOOK APPOINTMENT BUTTON -->
+                                <!-- <input class="mb-2 ms-auto btn btn-dark" type="button" id="add-product" value="Add another product"> -->
+                                <button type="button" class="btn btn-success" name="submitbtn" id="bookapp">Book Appointment</button>
                     </div>
 
 
-                    <div class="text-center mt-3 mb-5"  >
+                    <!-- <div class="text-center mt-3 mb-5"  >
                         <input type="submit" name="submitbtn" id="submitted" class="form-submit" data-submit="...Sending" value="Submit">
-                    </div>
+                        <button type="button" class="btn btn-success">Book Appointment</button>
+                    </div> -->
+
                 </div>
             </form>
         </div>
             
-           
-
             <script>
                 document.getElementById('add-product').addEventListener('click', function() {
                     var container = document.getElementById('form');
@@ -263,19 +285,9 @@
                     alert("Your order form has successfully been submitted!")            
                     return true; // Allow form submission
                 }
-                /* MODAL - pwede niyo try if kaya siya sa conditional statement
-                const section = document.querySelector("section"),
-                        overlay = document.querySelector(".overlay"),
-                        showBtn = document.querySelector(".form-submit"),
-                        closeBtn = document.querySelector(".close-btn");
-
-                showBtn.addEventListener("click", () => section.classList.add("active"));
-                    overlay.addEventListener("click", () => section.classList.remove("active"));
-                    closeBtn.addEventListener("click", () => section.classList.remove("active"));   
-                */
             </script>
         </div>
-        <?php require_once('footer.php'); ?>
- 
+        <!-- FOOTER -->
+        <?php include 'footer.php'; ?>
     </body>
 </html>

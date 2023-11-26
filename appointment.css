@@ -1,0 +1,61 @@
+body{
+    background-image: url(images/Home2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+.app_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3%;
+}
+.ps_photo{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    width: 30%;
+}
+#ps {
+    width: 200px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container {
+    background-image: url("images/form_bg.png");
+    height: 550px;
+}
+.row {
+    justify-content: center;
+}
+#logo {
+    margin-left: 30px;
+    height: 5%;
+    width: 5%;
+}
+.sgh {
+    display: inline-block;
+    color: #1B4303; 
+    font-size: 20px; 
+    font-weight: bold; 
+    font-family: League Gothic; 
+    margin-left: 10px
+}
+.ots {
+    justify-content: center;
+}
+.ps-photo-desc{
+    text-align: justify;
+}
+.ots{
+    padding-top: 12%;
+    padding-bottom: 3%;
+}
+.service, .schedule{
+    margin-left: 155px;
+}
+#bookapp{
+    text-align: center;
+}

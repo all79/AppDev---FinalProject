@@ -16,52 +16,43 @@
         $contact_num = $_POST['phone'];
         $email = $_POST['email'];
         $address = $_POST['address'];
-        $item_selected = $_POST['selected-item'];
-        $item_amount = $_POST['schedule'];
-        $totalAmount = 0;
-        $itemTotalPrice = array();
+        //$service_selected = $_POST['selected_service'];
+        //$schedule_selected = $_POST['schedule'];
 
-        for ($i = 0; $i < count($item_selected); $i++) {
-            $selected_item = $item_selected[$i];
-            $amount = $item_amount[$i];
-            $product_id;
-            $item_price;
+        // for ($i = 0; $i < count($item_selected); $i++) {
+        //     $selected_item = $item_selected[$i];
+        //     $amount = $item_amount[$i];
+        //     $product_id;
+        //     $item_price;
 
 
-                if ($selected_item === "BIOELAB AS-280 Fully Auto Chemistry Analyze") {
-                    $product_id = 1;
-                    $item_price = 5.00;
-                } else if ($selected_item === "ZYBIO Z3  HEMATOLOGY ANALYZER") {
-                    $product_id = 2;
-                    $item_price = 5.00;
-                } else if ($selected_item === "EOSCARE IMMUNO ANALYZER") {
-                    $product_id = 3;
-                    $item_price = 16000.00;
-                } else if ($selected_item === "EASYLYTE EXPAND ANALYZER") {
-                    $product_id = 4;
-                    $item_price = 46000.00;
-                } else if ($selected_item === "KHB202 COAGULOMETER") {
-                    $product_id = 5;
-                    $item_price = 12500.00;
-                } else if ($selected_item === "6MINDRAY BC 30 FULLY AUTO HEMA ANALYZER") {
-                    $product_id = 6;
-                    $item_price = 28700.00;
-                } else if ($selected_item === "BGENRUI GE500 ELECTROLYTE ANALYZER") {
-                    $product_id = 7;
-                    $item_price = 33000.00;
-                }
-                $itemTotal = $item_price * $amount;
-                //$itemTotalPrice[$i] = $itemTotal;
-                //$newTotal = $itemTotalPrice[$i];
+        //         if ($selected_item === "BIOELAB AS-280 Fully Auto Chemistry Analyze") {
+        //             $product_id = 1;
+        //             $item_price = 5.00;
+        //         } else if ($selected_item === "ZYBIO Z3  HEMATOLOGY ANALYZER") {
+        //             $product_id = 2;
+        //             $item_price = 5.00;
+        //         } else if ($selected_item === "EOSCARE IMMUNO ANALYZER") {
+        //             $product_id = 3;
+        //             $item_price = 16000.00;
+        //         } else if ($selected_item === "EASYLYTE EXPAND ANALYZER") {
+        //             $product_id = 4;
+        //             $item_price = 46000.00;
+        //         } else if ($selected_item === "KHB202 COAGULOMETER") {
+        //             $product_id = 5;
+        //             $item_price = 12500.00;
+        //         } else if ($selected_item === "6MINDRAY BC 30 FULLY AUTO HEMA ANALYZER") {
+        //             $product_id = 6;
+        //             $item_price = 28700.00;
+        //         } else if ($selected_item === "BGENRUI GE500 ELECTROLYTE ANALYZER") {
+        //             $product_id = 7;
+        //             $item_price = 33000.00;
+        //         }
 
             // $insertOrderSQL = "INSERT INTO `Order` (product_id, customer_id, quantity) VALUES ($product_id, $customer_id, $amount)";
             // executeQuery($insertOrderSQL); 
-        }
+        //}
 
-        //Total Amount of the ordered items
-        for($j = 1; $j <= count($item_selected); $j++){
-            $totalAmount += $itemTotal;
-        }
 
         // ------------ PHPMailer -----------------
         //Create an instance; passing `true` enables exceptions
@@ -73,53 +64,57 @@
             $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $mail->Username   = 'suerogeneralhospital0@gmail.com';      //SMTP username
-            $mail->Password   = 'yfgbukyunhvqngkv';                     //SMTP password
+            $mail->Password   = 'qipi iykw huni bpsc';                  //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //RECIPIENT
-            $mail->setFrom('from@example.com', 'Suero General Hospital');
+            $mail->setFrom('suerogeneralhospital0@gmail.com', 'Suero General Hospital');
             $mail->addAddress($email);                                  //Recipient of email from forms input
 
 
             $email_message = "<h1><center>Suero General Hospital</center></h1>
-                    <h3><center>We have received your order!</center></h3>
-                    <p><center>Hi there, $firstname, <br><br>Thank you for shopping with us. We hope you enjoy your order!</center><p/>
-                    <div>
-                    <table style='display: flex; justify-content: center;'>
-                        <tr>
-                            <td><strong>Order/s: </strong></td>
-                            <td><strong>Schedule: </strong></td>
-                            <td><strong>Price: </strong></td>
-                        </tr>";
+                    <h3><center>Your booking appointment has been confirmed.</center></h3>
+                    <p>Hi there, $firstname, <br><br>
+                        We hope this email finds you well. This is a confirmation of your upcoming appointment at 
+                        <strong>Suero General Hospital.</strong> We appreciate your trust in our healthcare services.
+                    !<p/>
+                    <h3>APPOINTMENT DETAILS</h3>
+                    <ul>
+                        <li><strong>Patient's Name: </strong>$firstname $lastname</li>
+                        <li><strong>Patient's Contact Number:</strong> $contact_num</li>
+                        <li><strong>Patient's Address:</strong> $address</li>
+                        <li><strong>Service: </strong> </li>
+                        <li><strong>Schedule:</strong> </li>
+                    </ul>
+                    <h3>REMINDERS:</h3>
+                    <ol>
+                        <li>Arrival: Please arrive at least 15 minutes before your scheduled appointment to complete any necessary paperwork.</li>
+                        <li>Documentation: Bring your photo ID, insurance card, and any relevant medical records or test results.</li>
+                        <li>Cancellation/Rescheduling: If you need to cancel or reschedule your appointment, 
+                            kindly contact us at least 24 hours in advance.</li>
+                    </ol>
+                    <p>We look forward to providing you with quality healthcare. Thank you for choosing Suero General Hospital.</p><br><br>
+                    <p>Best Regards</p>
+                    <p>Suero General Hospital</p>";
+
 
             // Iterate over selected items and their corresponding amounts
-            for ($i = 0; $i < count($item_selected); $i++) {
-                $selected_item = $item_selected[$i];
-                $amount = $item_amount[$i];
+            // for ($i = 0; $i < count($item_selected); $i++) {
+            //     $selected_item = $item_selected[$i];
+            //     $amount = $item_amount[$i];
 
-                $email_message .= "<tr>
-                            <td>$selected_item</td>
-                            <td><center>$amount</center></td>
-                            <td>$itemTotal</td>
-                        </tr><br>";
-            }
+            //     $email_message .= "<tr>
+            //                 <td>$selected_item</td>
+            //                 <td><center>$amount</center></td>
+            //                 <td>$itemTotal</td>
+            //             </tr><br>";
+            // }
 
-            $email_message .= "<tr>
-                        <td><strong>Shipping Address: </strong></td>
-                        <td></td>
-                        <td><strong>Total Amount</strong></td>
-                    </tr>
-                    <tr>
-                        <td>$address</td>
-                        <td></td>
-                        <td>$totalAmount</td>
-                    </tr>
-                </table>";
 
             //CONTENT
             $mail->isHTML(true);                            //Set email format to HTML
-            $mail->Subject = 'Order Confirmation!';         //Email Subject
+            $mail->Subject = 'Booking Appointment Confirmed';         //Email Subject
             $mail->Body    = $email_message;                //Email Message
 
 
@@ -219,8 +214,8 @@
                     <h3 class="sgh">SUERO GENERAL HOSPITAL</h3><br></br>
                     <div class="row">
                         <div class="col-md-6">
-                            <input class="form-control mb-2" type="text" name="lname" id="inp1" placeholder="Last Name" required>
-                            <input class="form-control mb-2" type="text" name="fname" id="inp2" placeholder="Full Name" required>
+                            <input class="form-control mb-2" type="text" name="lname" id="inp1" placeholder="Patient's Last Name" required>
+                            <input class="form-control mb-2" type="text" name="fname" id="inp2" placeholder="Patient's Full Name" required>
                             <input class="form-control mb-2" type="text" name="phone" id="inp3" placeholder="Contact Number" required>
                             <input class="form-control mb-2" type="text" name="email" id="inp4" placeholder="Email" required>
                             <input class="form-control mb-2" type="text" name="address" id="inp5" placeholder="Home Address" required>
@@ -228,24 +223,16 @@
                         
 
                         <!-- SERVICES DROPDOWN -->
-                        <div id="service_dd" class="col-md-6">
+                        <div id="service_dd"    >
                                 <label for="service_opt" class="service"><strong>Service:</strong></label>
-                                <select class="form-control selected-item" name="selected-item[]" id="service_opt">
+                                <select class="form-control selected-service" name="selected-service[]" id="service_opt">
                                     <option value="0">-- Please Select --</option>
-                                    <option value="Laboratory Services">Laboratory Services</option>
+                                    <option value="OPD">Out-Patient Department Services </option>
                                     <option value="Radiology Services">Radiology Services</option>
-                                    <option value="AUM">Advanced Ultrasound Machine with 2-D Echo</option>
-                                    <option value="Labor and Delivery Rooms">Labor and Delivery Rooms</option>
-                                    <option value="Emergency Room">Emergency Room </option>
-                                    <option value="Ambulance Services">Ambulance Services</option>
-                                    <option value="Out Patient Department">Out Patient Department </option>
-                                    <option value="Private Rooms">Private Rooms</option>
-                                    <option value="Operating Rooms">Operating Rooms</option>
-                                    <option value="Operating Rooms">Operating Rooms</option>
                                 </select>
 
                                 <!-- SCHEDULE DROPDOWN -->
-                                <label for="schedule" class="schedule"><strong>Select Schedule:</strong></label>
+                                <label for="schedule"><strong>Select Schedule:</strong></label>
                                 <select class="form-control" name="schedule[]" id="schedule">
                                     <?php for ($i = 1; $i <= 10; $i++) { ?>
                                         <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
@@ -255,14 +242,14 @@
 
                             <!-- BOOK APPOINTMENT BUTTON -->
                                 <!-- <input class="mb-2 ms-auto btn btn-dark" type="button" id="add-product" value="Add another product"> -->
-                                <button type="button" class="btn btn-success" name="submitbtn" id="bookapp">Book Appointment</button>
+                                <!-- <button type="button" class="btn btn-success" name="submitbtn" id="bookapp">Book Appointment</button> -->
                     </div>
 
 
-                    <!-- <div class="text-center mt-3 mb-5"  >
+                    <div class="text-center mt-3 mb-5"  >
                         <input type="submit" name="submitbtn" id="submitted" class="form-submit" data-submit="...Sending" value="Submit">
-                        <button type="button" class="btn btn-success">Book Appointment</button>
-                    </div> -->
+                        <!-- <button type="button" class="btn btn-success">Book Appointment</button> -->
+                    </div>
 
                 </div>
             </form>
@@ -275,7 +262,7 @@
                     container.parentNode.appendChild(clone);
                 });
                 function validateForm() {
-                    var selections = document.querySelectorAll('.selected-item');
+                    var selections = document.querySelectorAll('.selected-service');
                     for (var i = 0; i < selections.length; i++) {
                         if (selections[i].value === "0") {
                             alert("Please select an item for all fields.");

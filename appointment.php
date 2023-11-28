@@ -208,7 +208,7 @@
             <!-- APPOINTMENT FORM -->
             <div class="form-container">
                 <form action="" method="POST" onsubmit="return validateForm()">
-                <div class="container" style="height: 570px;">
+                <div class="container" style="height: 620px;">
                     <br></br>
                     <img src="images/logo.png" alt="logo" id="logo">
                     <h3 class="sgh">SUERO GENERAL HOSPITAL</h3><br></br>
@@ -223,17 +223,35 @@
                         
 
                         <!-- SERVICES DROPDOWN -->
-                        <div id="service_dd"    >
+                        <div id="service_dd" class="col-md-7">
                                 <label for="service_opt" class="service"><strong>Service:</strong></label>
-                                <select class="form-control selected-service" name="selected-service[]" id="service_opt">
+                                <select class="form-control mb-2" name="selected-service[]" id="service_opt">
                                     <option value="0">-- Please Select --</option>
                                     <option value="OPD">Out-Patient Department Services </option>
                                     <option value="Radiology Services">Radiology Services</option>
                                 </select>
 
+                                <!-- DEPARTMENT DROPDOWN -->
+                                <label for="department" class="service" style="margine"><strong>Select Department: </strong></label>
+                                <select select class="form-control mb-2" name="selected_dep" id="department">
+                                    <!-- IF Out-Patient Department Services - gawa ka nalang ng if else statement depending sa ano chinoose from service-->
+                                    <option value="0">-- Please Select --</option>
+                                    <option value="ENT Departmnt">ENT Department</option>
+                                    <option value="Opthalmology Department">Opthalmology Department</option>
+                                    <option value="Pediatrics Department">Pediatrics Department</option>
+                                    <option value="Cardiology Department">Cardiology Department</option>
+                                    <option value="Gynecology and Obstetrics Department">Gynecology and Obstetrics Department</option>
+                                    <option value="Pulmonology Department">Pulmonology Department</option>
+
+
+                                    <!-- ELSE IF Radiology Services -->
+                                    <option value="Ultrasound">Ultrasound</option>
+                                    <option value="X0ray">X-ray</option>
+                                    <option value="CT Scan">CT Scan</option>
+                                </select>
                                 <!-- SCHEDULE DROPDOWN -->
-                                <label for="schedule"><strong>Select Schedule:</strong></label>
-                                <select class="form-control" name="schedule[]" id="schedule">
+                                <label for="schedule" class="schedule"><strong>Select Schedule:</strong></label>
+                                <select class="form-control mb-2" name="schedule[]" id="schedule">
                                     <?php for ($i = 1; $i <= 10; $i++) { ?>
                                         <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                                     <?php } ?>

@@ -25,7 +25,7 @@ body{
 }
 .container {
     background-image: url("images/form_bg.png");
-    height: 550px;
+    height: 600px;
 }
 .row {
     justify-content: center;
@@ -53,9 +53,10 @@ body{
     padding-top: 12%;
     padding-bottom: 3%;
 }
-.service, .schedule{
-    margin-left: 155px;
+.service, .schedule, .departments{
+    margin-left: -5px;
 }
+
 #bookapp{
     text-align: center;
 }

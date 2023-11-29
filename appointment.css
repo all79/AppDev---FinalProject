@@ -3,6 +3,8 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
     }
 .app_div {
     display: flex;
@@ -60,3 +62,5 @@ body{
 #bookapp{
     text-align: center;
 }
+
+

@@ -47,7 +47,7 @@
                 <div class="navbar-nav text-md-right ms-auto mx-4">
                     <a class="nav-link mx-2" href="services.html"
                         style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;" target="_blank">Services</a>
-                    <a class="nav-link mx-2" href="#"
+                    <a class="nav-link mx-2" href="appointment.html"
                         style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;">Appointment</a>
                     <a class="nav-link mx-2" href="#"
                         style="color: #1B4303; font-size: 22px; font-family: Lekton; font-weight: 700; word-wrap: break-word;">Doctor</a>
@@ -59,7 +59,7 @@
     </nav>
 
     <br> <br> <br>
-    <!-- Out Patient Services -->
+    <!-- Start of Body -->
     <div class="first">
         <div class="container text-center">
             <h1>Out Patient Services</h1>
@@ -72,7 +72,7 @@
 
                       <h4 class="card-title my-2">ENT Department </h4>
                       <p class="card-text"> Specializes in the diagnosis and treatment of related to the ear, nose, throat, and head and neck.</p>
-                      <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
+                      <a href="#" class="btn btn-success mx-3 my-5" onclick="redirectToAppointment('ENT')">Book Now</a>
                       <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalENT">View Schedule</a>
 
                     </div>
@@ -86,7 +86,7 @@
 
                       <h4 class="card-title my-2">Opthamology Department</h4>
                       <p class="card-text-justify">  Specialized in the diagnosis and treatment of eye disorders, providing comprehensive eye care services.</p>
-                      <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
+                      <a href="#" class="btn btn-success mx-3 my-5" onclick="redirectToAppointment('Opthamology')">Book Now</a>
                       <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalOpt">View Schedule</a>
                     </div>
                   </div>
@@ -98,7 +98,7 @@
 
                       <h4 class="card-title my-2">Pediatrics Department</h4>
                       <p class="card-text"> Focuses on the healthcare of infants, children, and adolescents, addressing a wide range of pediatric medical conditions. </p>
-                      <a href="#" class="btn btn-success mx-3 my-3">Book Now</a>
+                      <a href="#" class="btn btn-success mx-3 my-3" onclick="redirectToAppointment('Pediatrics')">Book Now</a>
                       <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPedia">View Schedule</a>
 
                     </div>
@@ -110,6 +110,7 @@
 
 
 <br> <br> <br>
+        <div class="second">
             <div class="container text-center">
                 <div class="row">
                 <div class="col">
@@ -119,7 +120,7 @@
     
                           <h4 class="card-title my-2"> Cardiology Department  </h4>
                           <p class="card-text">Specializes in the diagnosis and treatment of heart-related conditions, including cardiovascular diseases and disorders.</p>
-                          <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
+                          <a href="#" class="btn btn-success mx-3 my-5"onclick="redirectToAppointment('Cardiology')">Book Now</a>
                           <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCardio">View Schedule</a>
 
                         </div>
@@ -133,7 +134,7 @@
     
                           <h4 class="card-title my-2"> OB-Gyne Department </h4>
                           <p class="card-text">Addresses women's reproductive health, encompassing obstetrics for pregnancy and childbirth and gynecology for overall reproductive system care.</p>
-                          <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
+                          <a href="#" class="btn btn-success mx-3 my-5" onclick="redirectToAppointment('OBGyne')">Book Now</a>
                           <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalOBG">View Schedule</a>
 
                         </div>
@@ -146,7 +147,7 @@
     
                           <h4 class="card-title my-2">Pulmonology Department </h4>
                           <p class="card-text">Specializes in the diagnosis and treatment of respiratory disorders, including diseases of the lungs and airways.</p>
-                          <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
+                          <a href="#" class="btn btn-success mx-3 my-5"onclick="redirectToAppointment('Pulmonology')">Book Now</a>
                           <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPulmo">View Schedule</a>
 
                         </div>
@@ -154,8 +155,9 @@
                 </div>
             </div>
         </div>
+ </div>
 <br> <br> <br>
-<!-- Radiology Services -->
+
     <div class="container text-center">
         <h1>Radiology Services</h1>
     <br>
@@ -167,7 +169,7 @@
 
                   <h4 class="card-title my-2">Ultrasound  </h4>
                   <p class="card-text"> Employed for real-time imaging, crucial in obstetrics, abdominal, and vascular assessments.aiding in the diagnosis of various medical conditions, especially in obstetrics, abdominal, and vascular imaging</p>
-                  <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
+                  <a href="#" class="btn btn-success mx-3 my-5"onclick="redirectToAppointment('Ultrasound')">Book Now</a>
                   <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUltra">View Schedule</a>
 
                 </div>
@@ -182,8 +184,7 @@
                     <p class="card-text-justify">
                         Providing immediate insights into fractures, chest issues, internal structures of the body, commonly used for detecting fractures, assessing chest conditions, and visualizing skeletal abnormalities.
                     </p>
-                    <a href="#" class="btn btn-success mx-3 my-5">Book Now</a>
-                    <!-- Corrected data-bs-target to #modalXray -->
+                    <a href="#" class="btn btn-success mx-3 my-5" onclick="redirectToAppointment('Xray')">Book Now</a>
                     <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalXray">View Schedule</a>
                 </div>
             </div>
@@ -195,7 +196,7 @@
 
                   <h4 class="card-title my-2">CT Scan</h4>
                   <p class="card-text"> Uses X-rays to generate detailed cross-sectional images of the body, providing a more comprehensive view than traditional X-rays and enabling precise diagnosis of conditions affecting the head, chest, abdomen, and extremities. </p>
-                  <a href="#" class="btn btn-success mx-3 my-3">Book Now</a>
+                  <a href="#" class="btn btn-success mx-3 my-3"onclick="redirectToAppointment('CTScan')">Book Now</a>
                   <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCT">View Schedule</a>
 
                 </div>
@@ -203,6 +204,7 @@
         </div>
     </div>
 </div>
+
 
 
 <!-- Modal for ENT Department -->
@@ -322,7 +324,7 @@
                 <br>
                 <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> M-W-F 10am to 11am</h5>
                 <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> M-W-F 12pm to 1pm</h5>
-                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i>  T-TH-S 3pm to 4pm</h5>
+                <h5><i class="fas fa-calendar" style="font-size: 1rem; color: #91d167;"></i> M-W-F 3pm to 4pm</h5>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -351,7 +353,6 @@
         </div>
     </div>
 </div>
-
 <!-- Modal for Xray -->
 <div class="modal fade" id="modalXray" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -393,5 +394,64 @@
         </div>
     </div>
 </div>
+
+
 </div>
+<br><br>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <!-- Section: Links  -->
+    <section class="mt-5">
+      <div class="container text-md-start">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 mx-auto my-3">
+            <!-- Content -->
+            <img src="images/logo.png" width="30px" height="30px">
+            <span style="color: #1B4303; font-size: 25px; font-weight: bold; font-family: League Gothic; margin-left: 2px">SUERO GENERAL HOSPITAL</span>
+            <br> <br>
+            <h5> Suero General Hospital, QFV3+8QQ, Cabugao, Ilocos Sur </h5>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 my-3">
+            <!-- Links -->
+            <a href="services.html" style="text-decoration:underline; color: #1B4303;">
+              <h6 class="text-uppercase fw-bold mb-4" style="color: #1B4303; font-size: 20px; font-weight: bold; font-family: League Gothic;">Services</h6>
+            </a>
+            <a href="appointment.js" style="text-decoration:underline; color: #1B4303;">
+              <h6 class="text-uppercase fw-bold mb-4" style="color: #1B4303; font-size: 20px; font-weight: bold; font-family: League Gothic;">Appointment</h6>
+            </a>
+            <a href="doctor.html" style="text-decoration:underline; color: #1B4303;">
+              <h6 class="text-uppercase fw-bold mb-4" style="color: #1B4303; font-size: 20px; font-weight: bold; font-family: League Gothic;">Doctor</h6>
+            </a>
+            <a href="AboutUs.html" style="text-decoration:underline; color: #1B4303;">
+              <h6 class="text-uppercase fw-bold mb-4" style="color: #1B4303; font-size: 20px; font-weight: bold; font-family: League Gothic;">About Us</h6>
+            </a>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto my-3">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4" style="color: #1B4303; font-size: 20px; font-weight: bold; font-family: League Gothic;">Contact Us</h6>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              suerogeneralhospital@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> 09123456158</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © Dela Cruz, Evangelista, Teng
+    </div>
+  </footer>
+
+
 </body>

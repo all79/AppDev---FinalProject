@@ -253,7 +253,7 @@
                     return true; // Allow form submission
                 }
 
-            // Get references to the dropdowns
+            //References to the dropdowns
             const serviceDropdown = document.getElementById("service_opt");
             const opdDropdown = document.getElementById("OPD_dropdown");
             const radiologyDropdown = document.getElementById("Radiology_dropdown");
@@ -274,16 +274,15 @@
             const RadiologyselectedDept = document.getElementById("radiology_selected");
 
 
-            // Add an event listener to the first dropdown
+            //Event listener to the first dropdown
             serviceDropdown.addEventListener("change", function() {
-                // Hide all dropdowns
+                //Hide all dropdowns
                 opdDropdown.style.display = "none";
                 radiologyDropdown.style.display = "none";
 
                 // Get the selected value
                 const selectedService = serviceDropdown.value;
 
-                // Show or hide the second dropdown based on the selected value
                 if (selectedService === "OPD"){
                     opdDropdown.style.display = "block";
                 }
@@ -302,7 +301,6 @@
                 Gynedropdown.style.display = "none";
                 Pulmodropdown.style.display = "none";
     
-                // Your logic to show/hide dropdowns based on selectedDept
                 if (selectedDept === "ENT Department") {
                     ENTDropdown.style.display = "block";
                 }

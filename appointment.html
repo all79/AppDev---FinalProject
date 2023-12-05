@@ -206,9 +206,10 @@
                         </div>  
 
                         <!-- ULTRASOUND  DROPDOWN-->
-                        <div id="Ultrasound_dropdown"  class="col-md-6 w-75" style="margin-left: -60px;display: none">
+
+                        <div id="Ultrasound_dropdown" class="col-md-6 w-75" style="margin-left: -60px; display: none">
                             <label for="Ultrasound_sched"><strong>Select Schedule:</strong></label>
-                            <select class="form-control" id="Ultrasound_sched">
+                            <select class="form-control" id="Ultrasound_sched" >
                                 <option value="00">-- Please Select --</option>
                                 <option value="Mon - Fri: 8am to 11am">Mon - Fri: 8am to 11am</option>
                                 <option value=" Mon - Fri: 1pm to 4pm"> Mon - Fri: 1pm to 4pm</option>
@@ -217,7 +218,7 @@
                         </div>  
 
                         <!--X-RAY  DROPDOWN-->
-                        <div id="Xray_dropdown"  class="col-md-6 w-75" style="margin-left: -60px;display: none">
+                        <div id="Xray_dropdown" class="col-md-6 mb-3" style="margin-left: -60px;display: none">
                             <label for="Xray_sched"><strong>Select Schedule:</strong></label>
                             <select class="form-control" id="Xray_sched">
                                 <option value="00">-- Please Select --</option>
@@ -228,7 +229,7 @@
                         </div>  
 
                         <!--CT SCAN  DROPDOWN-->
-                        <div id="CT_dropdown" class="col-md-6 w-75" style="margin-left: -60px;display: none">
+                        <div id="CT_dropdown" class="col-md-6 mb-3" style="margin-left: -60px;display: none">
                             <label for="CT_sched"><strong>Select Schedule:</strong></label>
                             <select class="form-control" id="CT_sched">
                                 <option value="00">-- Please Select --</option>
@@ -241,17 +242,52 @@
     
     
                         <div class="text-center my-10"  >
-                            <input type="submit" name="submitbtn" id="submitted" class="form-submit" data-submit="...Sending" value="Submit">
-                            <!-- <button type="button" class="btn btn-success">Book Appointment</button> -->
+                            <input type="submit" name="submitbtn" id="submitFormBtn" class="form-submit" data-submit="...Sending" value="Submit" data-toggle="modal" data-target="#successModal">
                         </div>
     
                     </div>
                 </form>
             </div>
+
+
+            <!-- Success Modal -->
+            <div class="modal" tabindex="-1" id="successModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p><i class="fas fa-check-circle check-icon"></i></p>
+                            <p>Thank you for submitting the form. <br>
+                         </div>
+                        <div class="modal-footer"> <!-- Add a modal-footer div to contain the close button -->
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Your Form Modal -->
+  <div class="modal" tabindex="-1" id="successModal" >
+    <div class="modal-dialog" >
+      <div class="modal-content" >
+        
+        <div class="modal-body"  >
+            <p><i class="fas fa-check-circle check-icon"></i></p>
+          <!-- <p><i class="bi bi-check-circle check-icon"></i></p> -->
+          <p>Thank you for submitting the form. <br>
+            Please check your email for further instructions.</p>
+        </div>
+        
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+            
         </div>
        
+           
 
-
+            
             <!-- APPOINTMENT FORM -->
             <script>
                 function validateForm() {

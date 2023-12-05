@@ -15,6 +15,7 @@ body {
 	max-width: calc(100% - 20px);
 	box-sizing: border-box;
 	margin-bottom: 10px;
+	margin-left: auto;
 }
 .row,
 .fixed-size-input {
@@ -77,7 +78,7 @@ button:hover {
 	margin-right: auto;
 }
 .container {
-	background-image: url("images/form_bg.png");
+	margin-left: -30px;
 	height: 600px;
 }
 .row {
@@ -111,7 +112,21 @@ button:hover {
 .departments {
 	margin-left: -5px;
 }
+.form-control{
+	margin-left: -5px;
+}
+#Ultrasound_dropdown{
+	margin-left: auto;
+}
+
+
+
 
 #bookapp {
 	text-align: center;
+}
+
+
+.modal{
+	z-index: 1s;
 }

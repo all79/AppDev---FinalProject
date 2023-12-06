@@ -1,132 +1,80 @@
 body {
-	display: flex;
-	flex-direction: column;
+  background-image: url(images/Home2.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
 }
-.form-container {
-	width: 600px;
-	margin-right: 130px;
-	margin-top: 25px;
-	display: flex;
-	flex-direction: column;
-}
-.form-container input,
-.form-container select {
-	width: calc(100% - 20px);
-	max-width: calc(100% - 20px);
-	box-sizing: border-box;
-	margin-bottom: 10px;
-	margin-left: auto;
-}
-.row,
-.fixed-size-input {
-	align-items: center;
-	width: 700px;
-	display: flex;
-	flex-direction: row;
-}
-#service_opt{
-    width: 500px;
-}
-.serviceselect{
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-}
-#service_opt, #OPD_dropdown {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-}
-
-.serviceselect, .service {
-    width: 500px;
-}
-
-
-
 .app_div {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	gap: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3%;
 }
 .ps_photo {
-	display: flex;
-	flex-direction: column;
-	margin: auto;
-	text-align: center;
-	width: 30%;
-}
-.form-submit {
-	padding: 10px 20px;
-	font-size: 16px;
-	font-weight: bold;
-	background-color: #28a745;
-	color: #fff;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-button:hover {
-	background-color: #218838;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  width: 30%;
 }
 #ps {
-	width: 200px;
-	height: auto;
-	margin-left: auto;
-	margin-right: auto;
+  width: 200px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .container {
-	margin-left: -30px;
-	height: 600px;
+  background-image: url("images/form_bg.png");
+  height: 600px;
 }
 .row {
-	justify-content: center;
+  justify-content: center;
 }
 #logo {
-	margin-left: 30px;
-	height: 5%;
-	width: 5%;
+  margin-left: 30px;
+  height: 5%;
+  width: 5%;
 }
 .sgh {
-	display: inline-block;
-	color: #1b4303;
-	font-size: 20px;
-	font-weight: bold;
-	font-family: League Gothic;
-	margin-left: 10px;
+  display: inline-block;
+  color: #1b4303;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: League Gothic;
+  margin-left: 10px;
 }
 .ots {
-	justify-content: center;
+  justify-content: center;
 }
 .ps-photo-desc {
-	text-align: justify;
+  text-align: justify;
 }
 .ots {
-	padding-top: 12%;
-	padding-bottom: 3%;
+  padding-top: 12%;
+  padding-bottom: 3%;
 }
 .service,
 .schedule,
 .departments {
-	margin-left: -5px;
+  margin-left: -5px;
 }
-.form-control{
-	margin-left: -5px;
-}
-#Ultrasound_dropdown{
-	margin-left: auto;
-}
-
-
-
 
 #bookapp {
-	text-align: center;
+  text-align: center;
+}
+.fixed-size-input {
+  width: 100%; /* Adjust the width as needed */
+  margin-bottom: 10px;
 }
 
+.form-control {
+  width: 100%; /* Adjust the width as needed */
+  margin-bottom: 10px;
+}
 
-.modal{
-	z-index: 1s;
+.app_form {
+  max-width: 600px; /* Set the maximum width of the form */
+  margin: auto; /* Center the form on the page */
 }

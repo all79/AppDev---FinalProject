@@ -1,57 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
-.carousel-inner {
-  height: 500px;
-  width: 500px;
-}
-.carousel-item{
-  height: 500px;
-}
-.carousel-item img {
-  object-fit: cover;
-  width: 50%;
-  height: 100%;
-}
-@media (max-width: 700px) {
-  .carousel-inner {
-    height: 300px;
-  }
+:root{
+    --green:#1B4303;
+    --pink:rgb(152, 233, 118);
+    --black: #1d1c1c;
+    --white: #fff;
+    --light-color:#666;
 }
 
-@media (min-width: 769px) and (max-width: 500px) {
-  .carousel-inner {
-    height: 400px;
-  }
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none;
+  transition: all .2s linear;
+  --box-shadow:0 .3rem 1.5rem rgba(0,0,0,.1);
+
 }
 
-@media (min-width: 500px) {
-  .carousel-inner {
-    height: 500px;
-  }
+section{
+  padding: 3rem 7%;
 }
-.choose{
-  width: 77%;
-  margin:auto;
+
+.heading{
+  font-size: 6rem;
+  color: var(--black);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-bottom: 6rem;
 }
-.location {
-   height: 100vh;
-   border: 2px ;
-   border-color: black;
+
+.heading span{
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+
+
+
+.header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  background:  #E6ECE2;
+  box-shadow: var(--box-shadow);
+  height: 90px;
 }
 
-.location h1 {
-  color: #1B4303;
-  margin-bottom: 60px;
-  
+
+.header .navbar a{
+  font-size: 20px;
+  margin: 0 1rem;
+  color: var(--black);
+  text-decoration: none;
+  color: green;
 }
 
-iframe {
-  width: 77%;
-  height: 500px;
-  border: 2px solid black;
-  border-color: black;
+.header .navbar a:hover,
+.header .icons div:hover{
+  color: var(--pink);
+}
 
+.header .icons div{
+  font-size: 2.5rem;
+  margin-left: 1rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+#menu-btn{
+  display: none;
 }

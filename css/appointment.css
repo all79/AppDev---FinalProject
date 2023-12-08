@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --green:#1B4303;
+    --pink:rgb(152, 233, 118);
+    --black: #1d1c1c;
+    --white: #fff;
+    --light-color:#666;
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none;
+  transition: all .2s linear;
+  --box-shadow:0 .3rem 1.5rem rgba(0,0,0,.1);
+
+}
+.heading{
+	font-size: 6rem;
+	color: var(--black);
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bolder;
+	margin-bottom: 6rem;
+  }
+  
+  .heading span{
+	color: var(--green);
+	text-transform: uppercase;
+  }
+  
+  
+  
+  
+  .header{
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 9%;
+	background:  #E6ECE2;
+	box-shadow: var(--box-shadow);
+	height: 90px;
+  }
+  
+  
+  .header .navbar a{
+	font-size: 20px;
+	margin: 0 1rem;
+	color: var(--black);
+	text-decoration: none;
+	color: green;
+  }
+  
+  .header .navbar a:hover,
+  .header .icons div:hover{
+	color: var(--pink);
+  }
+  
+  .header .icons div{
+	font-size: 2.5rem;
+	margin-left: 1rem;
+	color: var(--black);
+	cursor: pointer;
+  }
+  
+  #menu-btn{
+	display: none;
+  }
+body {
+	display: flex;
+	flex-direction: column;
+	padding-top: 110px;
+}
+.form-container {
+	width: 600px;
+	margin-right: 130px;
+	margin-top: 25px;
+	display: flex;
+	flex-direction: column;
+}
+.form-container input,
+.form-container select {
+	width: calc(100% - 20px);
+	max-width: calc(100% - 20px);
+	box-sizing: border-box;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.row,
+.fixed-size-input {
+	align-items: center;
+	width: 700px;
+	display: flex;
+	flex-direction: row;
+}
+#service_opt {
+	width: 500px;
+}
+.serviceselect {
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+}
+#service_opt,
+#OPD_dropdown {
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+}
+
+.serviceselect,
+.service {
+	width: 500px;
+}
+
+.app_div {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 3%;
+}
+.ps_photo {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	text-align: center;
+	width: 30%;
+}
+.form-submit {
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	background-color: #28a745;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #218838;
+}
+#ps {
+	width: 200px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+.container {
+	margin-left: -30px;
+	height: 600px;
+}
+.row {
+	justify-content: center;
+}
+#logo {
+	margin-left: 30px;
+	height: 5%;
+	width: 5%;
+}
+.sgh {
+	display: inline-block;
+	color: #1b4303;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: League Gothic;
+	margin-left: 10px;
+}
+.ots {
+	justify-content: center;
+}
+.ps-photo-desc {
+	text-align: justify;
+}
+.ots {
+	padding-top: 12%;
+	padding-bottom: 3%;
+}
+.service,
+.schedule,
+.departments {
+	margin-left: -5px;
+}
+.form-control {
+	margin-left: -5px;
+}
+#Ultrasound_dropdown {
+	margin-left: auto;
+}
+
+#bookapp {
+	text-align: center;
+}
+
+/* MODAL STYLING */
+.modal-container {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	width: 100%;
+	height: 120%;
+	display: none; /* change this */
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content {
+	width: 40%;
+	height: auto;
+	padding: 2rem;
+	border-radius: 10px;
+	background-color: white;
+}
+
+.modal-close {
+	width: 100%;
+	margin-top: 2rem;
+}
+
+.modal-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+.modal-body p {
+	font-size: 1.15rem;
+	margin: auto 1rem;
+}
+
+.fa-check-circle {
+	color: green;
+	padding-bottom: 1.5rem;
+}
+
+.check-icon {
+	font-size: 70px;
+}

@@ -16,12 +16,8 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+        
         <!-- Modal -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         
         <!--SMTP-->
@@ -57,12 +53,8 @@
                 </div>
             </div>
         </nav><br>
-        <!--PS DIVIDER-->
-        
-        <!-- Footer -->
-        
-            
-        
+
+        <!-- FORM CONTAINER -->
         <div class="body-container">
             <div class="app_div">
                 <!-- OUT PATIENT SERVICES -->
@@ -95,7 +87,6 @@
                                 <input class="form-control mb-2 fixed-size-input" type="text" id="address" placeholder="Home Address" required>
                             </div>
                         
-                        
                             
                             <!-- SERVICES DROPDOWN-->           
                             <div id="service_dd" class="col-md-6 w-75" style="margin-left: -60px;">
@@ -125,7 +116,7 @@
                             <!-- RADIOLOGY DROPDOWN -->
                             <div id="Radiology_dropdown" class="col-md-6 w-75" style="margin-left: -60px;display: none">
                                 <label for="radiology_selected" class="service"><strong>Select Department</strong></label>
-                                <select class="form-control " id="radiology_selected" required>
+                                <select class="form-control" id="radiology_selected" required>
                                     <option value="">-- Please Select --</option>
                                     <option value="Ultrasound">Ultrasound</option>
                                     <option value="X-ray">X-ray</option>
@@ -137,7 +128,7 @@
                             <!-- ENT DROPDOWN-->
                             <div id="ENT_dropdown" class="col-md-6 w-75" style="margin-left: -60px; display: none">
                                 <label for="ENT_sched"><strong>Select Schedule:</strong></label>
-                                <select class="form-control " id="ENT_sched" required>
+                                <select class="form-control" id="ENT_sched" required>
                                     <option value="">-- Please Select --</option>
                                     <option value="MWF: 8am to 9am">MWF: 8am to 9am</option>
                                     <option value="MWF: 10am to 11am"> MWF: 10am to 11am</option>
@@ -148,312 +139,301 @@
                             <!-- OPTHALMOLOGY DROPDOWN-->
                             <div id="Opth_dropdown"  class="col-md-6 w-75" style="margin-left: -60px; display: none">
                                 <label for="Opth_sched"><strong>Select Schedule:</strong></label>
-                                <select class="form-control " id="Opth_sched" required>
+                                <select class="form-control" id="Opth_sched" required>
                                     <option value="">-- Please Select --</option>
                                     <option value="TTHS: 10am to 11am">TTHS: 10am to 11am</option>
                                     <option value="TTHS: 1pm to 3pm"> TTHS: 1pm to 3pm</option>
                                     <option value="TTHS: 3:30pm to 5pm">TTHS: 3:30pm to 5pm</option>
                                 </select>
                             </div>  
-                            <!-- style="display: none;" -->
+
                             <!-- PEDIATRICS DROPDOWN-->
                             <div id="Pedia_dropdown" class="col-md-6 w-75" style="margin-left: -60px; display: none">
                                 <label for="Pedia_sched"><strong>Select Schedule:</strong></label>
-                                <select class="form-control " id="Pedia_sched" required>
+                                <select class="form-control" id="Pedia_sched" required>
                                     <option value="">-- Please Select --</option>
                                     <option value="MWF: 8am to 11am">MWF: 8am to 11am</option>
                                     <option value=" MWF: 12pm to 2pm"> MWF: 12pm to 2pm</option>
                                     <option value="MWF: 2:30pm to 5pm">MWF: 2:30pm to 5pm</option>
                                 </select>
                             </div>  
+
                             <!-- CARDIOLOGY  DROPDOWN-->
                             <div id="Cardio_dropdown"  class="col-md-6 w-75" style="margin-left: -60px; display: none">
                                 <label for="Cardio_sched"><strong>Select Schedule:</strong></label>
-                                <select class="form-control " id="Cardio_sched" required>
+                                <select class="form-control" id="Cardio_sched" required>
                                     <option value="00">-- Please Select --</option>
                                     <option value="TTHS: 9am to 12nn">TTHS: 9am to 12nn</option>
-                                    <option value="TTHS: 2pm to 7pm"> TTHS: 2pm to 7pm</option>
+                                    <option value="TTHS: 2pm to 7pm">TTHS: 2pm to 7pm</option>
                                 </select>
                             </div>  
                         </div>
+
                         <!-- GYNECOLOGY  DROPDOWN-->
                         <div id="Gyne_dropdown" class="col-md-6 w-75" style="margin-left: -60px;display: none">
                             <label for="Gyne_sched"><strong>Select Schedule:</strong></label>
-                            <select class="form-control " id="Gyne_sched" required>
+                            <select class="form-control" id="Gyne_sched" required>
                                 <option value="">-- Please Select --</option>
                                 <option value="Tue Fri: 1pm to 5pm">Tue Fri: 1pm to 5pm</option>
-                                <option value="Wed Sat 1pm to 5pm"> Wed Sat 1pm to 5pm</option>
+                                <option value="Wed Sat 1pm to 5pm">Wed Sat 1pm to 5pm</option>
                             </select>
                         </div>  
+
                         <!-- PULMONARY  DROPDOWN-->
-                        <div id="Pulmo_dropdown" class="col-md-6 w-75" style="margin-left: -60px;display: none">
+                        <div id="Pulmo_dropdown" class="col-md-6 w-75" style="margin-left: -60px; display: none">
                             <label for="Pulmo_sched"><strong>Select Schedule:</strong></label>
-                            <select class="form-control " id="Pulmo_sched" required>
+                            <select class="form-control" id="Pulmo_sched" required>
                                 <option value="">-- Please Select --</option>
                                 <option value="Mon Tue: 7am to 12nn">Mon Tue: 7am to 12nn</option>
-                                <option value="Fri: 1pm to 5pm"> Fri: 1pm to 5pm</option>
+                                <option value="Fri: 1pm to 5pm">Fri: 1pm to 5pm</option>
                             </select>
                         </div>  
+
                         <!-- ULTRASOUND  DROPDOWN-->
-                        <div id="Ultrasound_dropdown"  class="col-md-6 w-75" style="margin-left: -60px;display: none">
+                        <div id="Ultrasound_dropdown" class="col-md-6 w-75" style="margin-left: 60px; display: none">
                             <label for="Ultrasound_sched"><strong>Select Schedule:</strong></label>
                             <select class="form-control" id="Ultrasound_sched" required>
                                 <option value="">-- Please Select --</option>
                                 <option value="Mon - Fri: 8am to 11am">Mon - Fri: 8am to 11am</option>
-                                <option value=" Mon - Fri: 1pm to 4pm"> Mon - Fri: 1pm to 4pm</option>
-                                <option value="Sat: 9am to 3pm"> Sat: 9am to 3pm</option>
+                                <option value="Mon - Fri: 1pm to 4pm">Mon - Fri: 1pm to 4pm</option>
+                                <option value="Sat: 9am to 3pm">Sat: 9am to 3pm</option>
                             </select>
                         </div>  
+
                         <!--X-RAY  DROPDOWN-->
-                        <div id="Xray_dropdown"  class="col-md-6 w-75" style="margin-left: -60px;display: none">
+                        <div id="Xray_dropdown"  class="col-md-6 w-75" style="margin-left: 60px; display: none">
                             <label for="Xray_sched"><strong>Select Schedule:</strong></label>
                             <select class="form-control" id="Xray_sched" required>
                                 <option value="">-- Please Select --</option>
                                 <option value="Mon - Fri: 8am to 11am">Mon - Fri: 8am to 11am</option>
-                                <option value=" Mon - Fri: 1pm to 4pm"> Mon - Fri: 1pm to 4pm</option>
-                                <option value="Mon - Fri: 6pm to 8pm"> Mon - Fri: 6pm to 8pm</option>
+                                <option value="Mon - Fri: 1pm to 4pm">Mon - Fri: 1pm to 4pm</option>
+                                <option value="Mon - Fri: 6pm to 8pm">Mon - Fri: 6pm to 8pm</option>
                             </select>
                         </div>  
+
                         <!--CT SCAN  DROPDOWN-->
-                        <div id="CT_dropdown" class="col-md-6 w-75" style="margin-left: -60px;display: none">
+                        <div id="CT_dropdown" class="col-md-6 w-75" style="margin-left: 60px;display: none">
                             <label for="CT_sched"><strong>Select Schedule:</strong></label>
                             <select class="form-control" id="CT_sched" required>
                                 <option value="">-- Please Select --</option>
                                 <option value="Mon - Fri: 8am to 11am">Mon - Fri: 8am to 11am</option>
-                                <option value="Mon - Fri: 1pm to 4pm"> Mon - Fri: 1pm to 4pm</option>
-                                <option value="Mon - Fri: 6pm to 8pm"> Mon - Fri: 6pm to 8pm</option>
+                                <option value="Mon - Fri: 1pm to 4pm">Mon - Fri: 1pm to 4pm</option>
+                                <option value="Mon - Fri: 6pm to 8pm">Mon - Fri: 6pm to 8pm</option>
                             </select>
                         </div>  
                     </div>
 
-
+                        <!-- BOOK APPOINTMENT BUTTON -->
                         <div class="text-center my-10"  >
                             <input type="submit" class="btn btn-success" value="Book Appointment" onclick="sendEmail()"/>
-                            <!-- <input type="submit" name="submitbtn" id="submitted" class="form-submit" data-submit="...Sending" value="Submit"> -->
-                            <!-- <button type="button" class="btn btn-success">Book Appointment</button> -->
                         </div>
                     </div>
                 </form>
             </div>
         </div>
 
-                    <!-- Success Modal -->
-                    <div class="modal" tabindex="-1" id="successModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <p><i class="fas fa-check-circle check-icon"></i></p>
-                                    <p>Thank you for submitting the form. <br>
-                                 </div>
-                                <div class="modal-footer"> <!-- Add a modal-footer div to contain the close button -->
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>            
-
-            <!-- APPOINTMENT FORM -->
-            <script>
-                //References from dropdowns
-                const serviceDropdown = document.getElementById("service_opt");
-                const opdDropdown = document.getElementById("OPD_dropdown");
-                const radiologyDropdown = document.getElementById("Radiology_dropdown");
-                const ENTDropdown = document.getElementById("ENT_dropdown");
-                const Opthdrowndown = document.getElementById("Opth_dropdown");
-                const Pediadropdown = document.getElementById("Pedia_dropdown");
-                const Cardiodropdown = document.getElementById("Cardio_dropdown");
-                const Gynedropdown = document.getElementById("Gyne_dropdown");
-                const Pulmodropdown = document.getElementById("Pulmo_dropdown");
-                const Ultrasounddropdown = document.getElementById("Ultrasound_dropdown");
-                const Xraydropdown = document.getElementById("Xray_dropdown");
-                const CTdropdown = document.getElementById("CT_dropdown");
-                const OPDselectedDept = document.getElementById("opd_selected");
-                const RadiologyselectedDept = document.getElementById("radiology_selected");
+        <!-- APPOINTMENT FORM -->
+        <script>
+            //References from dropdowns
+            const serviceDropdown = document.getElementById("service_opt");
+            const opdDropdown = document.getElementById("OPD_dropdown");
+            const radiologyDropdown = document.getElementById("Radiology_dropdown");
+            const ENTDropdown = document.getElementById("ENT_dropdown");
+            const Opthdrowndown = document.getElementById("Opth_dropdown");
+            const Pediadropdown = document.getElementById("Pedia_dropdown");
+            const Cardiodropdown = document.getElementById("Cardio_dropdown");
+            const Gynedropdown = document.getElementById("Gyne_dropdown");
+            const Pulmodropdown = document.getElementById("Pulmo_dropdown");
+            const Ultrasounddropdown = document.getElementById("Ultrasound_dropdown");
+            const Xraydropdown = document.getElementById("Xray_dropdown");
+            const CTdropdown = document.getElementById("CT_dropdown");
+            const OPDselectedDept = document.getElementById("opd_selected");
+            const RadiologyselectedDept = document.getElementById("radiology_selected");
+            
+            //References from form
+            const lname = document.getElementById('lname');
+            const fname = document.getElementById('fname');
+            const phone = document.getElementById('phone');
+            const email = document.getElementById('email');
+            const address = document.getElementById('address');
+            const submit = document.getElementsByClassName('app_form')[0];
+            const ENTsched = document.getElementById('ENT_sched');
+            const Opthsched = document.getElementById('Opth_sched');
+            const Pediasched = document.getElementById('Pedia_sched');
+            const Cardiosched = document.getElementById('Cardio_sched');
+            const Gynesched = document.getElementById('Gyne_sched');
+            const Pulmosched = document.getElementById('Pulmo_sched');
+            const Ultrasoundsched = document.getElementById('Ultrasound_sched');
+            const Xraysched = document.getElementById('Xray_sched');
+            const CTsched = document.getElementById('CT_sched');
+            
+            
+            // Add an event listener to the first dropdown
+            serviceDropdown.addEventListener("change", function() {
+                // Hide all dropdowns
+                opdDropdown.style.display = "none";
+                radiologyDropdown.style.display = "none";
                 
-                //References from form
-                const lname = document.getElementById('lname');
-                const fname = document.getElementById('fname');
-                const phone = document.getElementById('phone');
-                const email = document.getElementById('email');
-                const address = document.getElementById('address');
-                const submit = document.getElementsByClassName('app_form')[0];
-                const ENTsched = document.getElementById('ENT_sched');
-                const Opthsched = document.getElementById('Opth_sched');
-                const Pediasched = document.getElementById('Pedia_sched');
-                const Cardiosched = document.getElementById('Cardio_sched');
-                const Gynesched = document.getElementById('Gyne_sched');
-                const Pulmosched = document.getElementById('Pulmo_sched');
-                const Ultrasoundsched = document.getElementById('Ultrasound_sched');
-                const Xraysched = document.getElementById('Xray_sched');
-                const CTsched = document.getElementById('CT_sched');
-                submit.addEventListener('submit', (e) =>{
-                    e.preventDefault();
-                    console.log("Clicked");
-                })
-
-                function validateForm() {
-                    var lastName = document.getElementById('lname').value;
-                    var firstname = document.getElementById('fname').value;
-                    var contactNumber = document.getElementById('phone').value;
-                    var userEmail = document.getElementById('email').value;
-                    var homeAddress = document.getElementById('address').value;
-                    var serviceOption = document.getElementById('service_opt').value;
-                    var departmentOption = document.getElementById('opd_selected').value;
-                    var scheduleOption = document.getElementById('ENT_sched').value ||
-                                        document.getElementById('Opth_sched').value ||
-                                        document.getElementById('Pedia_sched').value ||
-                                        document.getElementById('Cardio_sched').value ||
-                                        document.getElementById('Gyne_sched').value ||
-                                        document.getElementById('Pulmo_sched').value ||
-                                        document.getElementById('Ultrasound_sched').value ||
-                                        document.getElementById('Xray_sched').value ||
-                                        document.getElementById('CT_sched').value;
-
-                    // Check if any required field is empty
-                    if (!lastName || !firstname || !contactNumber || !userEmail || !homeAddress || serviceOption === '' || departmentOption === '' || scheduleOption === '') {
-                        // Display warning modal or alert
-                        swal("Warning!", "Please fill out all the fields in the form", "warning");
-                        return false; // Prevent form submission
-                    }
-                    return true;
+                // Get the selected value from Service dropdown
+                const selectedService = serviceDropdown.value;
+                
+                // Show or hide the second dropdown based on the selected value
+                if (selectedService === "OPD"){
+                    opdDropdown.style.display = "block";
                 }
+                else if (selectedService === "Radiology Services") {
+                    radiologyDropdown.style.display = "block";
+                }
+            });
+            OPDselectedDept.addEventListener("change", function (){
+                const selectedDept = OPDselectedDept.value;
+                const e_body = 
+                //Hide other dropdowns
+                ENTDropdown.style.display = "none";
+                Opthdrowndown.style.display = "none";
+                Pediadropdown.style.display = "none";
+                Cardiodropdown.style.display = "none";
+                Gynedropdown.style.display = "none";
+                Pulmodropdown.style.display = "none";
+                Ultrasounddropdown.style.display = "none";
+                Xraydropdown.style.display = "none";
+                CTdropdown.style.display = "none";
 
-                function sendEmail(){
-                    const fnameValue = fname.value;
-                    const lnameValue = lname.value;
-                    const phoneValue = phone.value;
-                    const emailValue = email.value;
-                    const addressValue = address.value;
-                    const departmentOption = OPDselectedDept.value || RadiologyselectedDept.value;
-                    const schedValue = ENTsched.value || Opthsched.value || Pediasched.value || Cardiosched.value || Gynesched.value 
-                                    || Pulmosched.value || Ultrasoundsched.value || Xraysched.value || CTsched.value;
+                // Your logic to show/hide dropdowns based on selectedDept
+                if (selectedDept === "ENT Department") {
+                    ENTDropdown.style.display = "block";
+                }
+                else if (selectedDept === "Opthalmology Department") {
+                    Opthdrowndown.style.display = "block";
+                }
+                else if (selectedDept === "Pediatrics Department"){
+                    Pediadropdown.style.display = "block";
+                }
+                else if (selectedDept === "Cardiology Department"){
+                    Cardiodropdown.style.display = "block";
+                }
+                else if (selectedDept === "Gynecology and Obstetrics Department"){
+                    Gynedropdown.style.display= "block";
+                }
+                else if (selectedDept === "Pulmonology Department"){
+                    Pulmodropdown.style.display = "block";
+                }
+            });
+            RadiologyselectedDept.addEventListener("change", function(){
+                const selectedDept2 = RadiologyselectedDept.value;
+                //Hide other dropdowns
+                Ultrasounddropdown.style.display = "none";
+                Xraydropdown.style.display = "none";
+                CTdropdown.style.display = "none";
+                ENTDropdown.style.display = "none";
+                Opthdrowndown.style.display = "none";
+                Pediadropdown.style.display = "none";
+                Cardiodropdown.style.display = "none";
+                Gynedropdown.style.display = "none";
+                Pulmodropdown.style.display = "none";
 
-                    const departmentName =
-                        OPDselectedDept.value === "ENT Department" ? "ENT Department" :
-                        OPDselectedDept.value === "Opthalmology Department" ? "Opthalmology Department" :
-                        OPDselectedDept.value === "Pediatrics Department" ? "Pediatrics Department" :
-                        OPDselectedDept.value === "Cardiology Department" ? "Cardiology Department" :
-                        OPDselectedDept.value === "Gynecology and Obstetrics Department" ? "Gynecology and Obstetrics Department" :
-                        OPDselectedDept.value === "Pulmonology Department" ? "Pulmonology Department" :
-                        RadiologyselectedDept.value === "Ultrasound" ? "Ultrasound Department" :
-                        RadiologyselectedDept.value === "X-ray" ? "X-ray Department" :
-                        RadiologyselectedDept.value === "CT Scan" ? "CT Scan Department" : "";
+                if (selectedDept2 === "Ultrasound"){
+                    Ultrasounddropdown.style.display = "block";
+                }
+                else if (selectedDept2 === "X-ray"){
+                    Xraydropdown.style.display = "block";
+                }
+                else if (selectedDept2 === "CT Scan"){
+                    CTdropdown.style.display = "block";
+                }
+            });
 
-                    const e_body =  `<h1><center>Suero General Hospital</center></h1>
-                    <h3><center>Your booking appointment has been confirmed.</center></h3>
-                    <p>Hi there, ${fnameValue}, <br><br>
-                        We hope this email finds you well. This is a confirmation of your upcoming appointment at 
-                        <strong>Suero General Hospital.</strong> We appreciate your trust in our healthcare services!
-                    <p/>
-                    <h3>APPOINTMENT DETAILS</h3>
-                    <ul>
-                        <li><strong>Patient's Name: </strong>${fnameValue} ${lnameValue}</li>
-                        <li><strong>Patient's Contact Number:</strong> ${phoneValue}</li>
-                        <li><strong>Patient's Address:</strong> ${addressValue}</li>
-                        <li><strong>Service: </strong> ${departmentName}</li>
-                        <li><strong>Schedule:</strong> ${schedValue}</li>
-                    </ul>
-                    <h3>REMINDERS:</h3>
-                    <ol>
-                        <li>Arrival: Please arrive at least 15 minutes before your scheduled appointment to complete any necessary paperwork.</li>
-                        <li>Documentation: Bring your photo ID, insurance card, and any relevant medical records or test results.</li>
-                        <li>Cancellation/Rescheduling: If you need to cancel or reschedule your appointment, 
-                            kindly contact us at least 24 hours in advance.</li>
-                    </ol>
-                    <p>We look forward to providing you with quality healthcare. Thank you for choosing Suero General Hospital.</p><br><br>
-                    <p>We look forward to providing you with quality healthcare. Thank you for choosing Suero General Hospital.</p><br>
-                    <p>Best Regards</p>
-                    <p>Suero General Hospital</p>`;     
-                    
-                    if (validateForm()){
-                        Email.send({
-                            SecureToken: "ebb0daa0-f116-4a3f-b7d1-8d9f8497bf6c",
-                            To: emailValue,
-                            From: 'suerogeneralhospital0@gmail.com',
-                            Subject: 'Booking Appointment Confirmed',
-                            Body : e_body
-                        }).then(
-                            message => {
-                                if(message == 'OK'){
-                                    swal("Success!", "Your booking appointment has been submitted.", "success")
-                                }
+
+            //FUNCTIONS
+            function validateForm() {
+                var lastName = document.getElementById('lname').value;
+                var firstname = document.getElementById('fname').value;
+                var contactNumber = document.getElementById('phone').value;
+                var userEmail = document.getElementById('email').value;
+                var homeAddress = document.getElementById('address').value;
+                var serviceOption = document.getElementById('service_opt').value;
+                var departmentOption = document.getElementById('opd_selected').value;
+                var scheduleOption = document.getElementById('ENT_sched').value ||
+                                    document.getElementById('Opth_sched').value ||
+                                    document.getElementById('Pedia_sched').value ||
+                                    document.getElementById('Cardio_sched').value ||
+                                    document.getElementById('Gyne_sched').value ||
+                                    document.getElementById('Pulmo_sched').value ||
+                                    document.getElementById('Ultrasound_sched').value ||
+                                    document.getElementById('Xray_sched').value ||
+                                    document.getElementById('CT_sched').value;
+
+                //Check if all fields are filled out
+                if (!lastName || !firstname || !contactNumber || !userEmail || !homeAddress || serviceOption === '' || departmentOption === '' || scheduleOption === '') {
+                    swal("Warning!", "Please fill out all the fields in the form", "warning");
+                    return false; // Prevent form submission
+                }
+                return true;
+            }
+            function sendEmail(){
+                const fnameValue = fname.value;
+                const lnameValue = lname.value;
+                const phoneValue = phone.value;
+                const emailValue = email.value;
+                const addressValue = address.value;
+                const departmentOption = OPDselectedDept.value || RadiologyselectedDept.value;
+                const schedValue = ENTsched.value || Opthsched.value || Pediasched.value || Cardiosched.value || Gynesched.value 
+                                || Pulmosched.value || Ultrasoundsched.value || Xraysched.value || CTsched.value;
+
+                const departmentName =
+                    OPDselectedDept.value === "ENT Department" ? "ENT Department" :
+                    OPDselectedDept.value === "Opthalmology Department" ? "Opthalmology Department" :
+                    OPDselectedDept.value === "Pediatrics Department" ? "Pediatrics Department" :
+                    OPDselectedDept.value === "Cardiology Department" ? "Cardiology Department" :
+                    OPDselectedDept.value === "Gynecology and Obstetrics Department" ? "Gynecology and Obstetrics Department" :
+                    OPDselectedDept.value === "Pulmonology Department" ? "Pulmonology Department" :
+                    RadiologyselectedDept.value === "Ultrasound" ? "Ultrasound Department" :
+                    RadiologyselectedDept.value === "X-ray" ? "X-ray Department" :
+                    RadiologyselectedDept.value === "CT Scan" ? "CT Scan Department" : "";
+
+                const e_body =  `<h1><center>Suero General Hospital</center></h1>
+                <h3><center>Your booking appointment has been confirmed.</center></h3>
+                <p>Hi there, ${fnameValue}, <br><br>
+                    We hope this email finds you well. This is a confirmation of your upcoming appointment at 
+                    <strong>Suero General Hospital.</strong> We appreciate your trust in our healthcare services!
+                <p/>
+                <h3>APPOINTMENT DETAILS</h3>
+                <ul>
+                    <li><strong>Patient's Name: </strong>${fnameValue} ${lnameValue}</li>
+                    <li><strong>Patient's Contact Number:</strong> ${phoneValue}</li>
+                    <li><strong>Patient's Address:</strong> ${addressValue}</li>
+                    <li><strong>Service: </strong> ${departmentName}</li>
+                    <li><strong>Schedule:</strong> ${schedValue}</li>
+                </ul>
+                <h3>REMINDERS:</h3>
+                <ol>
+                    <li>Arrival: Please arrive at least 15 minutes before your scheduled appointment to complete any necessary paperwork.</li>
+                    <li>Documentation: Bring your photo ID, insurance card, and any relevant medical records or test results.</li>
+                    <li>Cancellation/Rescheduling: If you need to cancel or reschedule your appointment, 
+                        kindly contact us at least 24 hours in advance.</li>
+                </ol>
+                <p>We look forward to providing you with quality healthcare. Thank you for choosing Suero General Hospital.</p><br><br>
+                <p>We look forward to providing you with quality healthcare. Thank you for choosing Suero General Hospital.</p><br>
+                <p>Best Regards</p>
+                <p>Suero General Hospital</p>`;     
+                
+                if (validateForm()){
+                    Email.send({
+                        SecureToken: "ebb0daa0-f116-4a3f-b7d1-8d9f8497bf6c",
+                        To: emailValue,
+                        From: 'suerogeneralhospital0@gmail.com',
+                        Subject: 'Booking Appointment Confirmed',
+                        Body : e_body
+                    }).then(
+                        message => {
+                            if(message == 'OK'){
+                                swal("Success!", "Your booking appointment has been submitted.", "success")
                             }
-                        );
-                    }
+                        }
+                    );
                 }
-
-
-                // Add an event listener to the first dropdown
-                serviceDropdown.addEventListener("change", function() {
-                    // Hide all dropdowns
-                    opdDropdown.style.display = "none";
-                    radiologyDropdown.style.display = "none";
-                    // Get the selected value
-                    const selectedService = serviceDropdown.value;
-                    
-                    // Show or hide the second dropdown based on the selected value
-                    if (selectedService === "OPD"){
-                        opdDropdown.style.display = "block";
-                    }
-                    else if (selectedService === "Radiology Services") {
-                        radiologyDropdown.style.display = "block";
-                    }
-                });
-                OPDselectedDept.addEventListener("change", function (){
-                    const selectedDept = OPDselectedDept.value;
-                    const e_body = 
-                    //Hide other dropdowns
-                    ENTDropdown.style.display = "none";
-                    Opthdrowndown.style.display = "none";
-                    Pediadropdown.style.display = "none";
-                    Cardiodropdown.style.display = "none";
-                    Gynedropdown.style.display = "none";
-                    Pulmodropdown.style.display = "none";
-        
-                    // Your logic to show/hide dropdowns based on selectedDept
-                    if (selectedDept === "ENT Department") {
-                        ENTDropdown.style.display = "block";
-                    }
-                    else if (selectedDept === "Opthalmology Department") {
-                        Opthdrowndown.style.display = "block";
-                    }
-                    else if (selectedDept === "Pediatrics Department"){
-                        Pediadropdown.style.display = "block";
-                    }
-                    else if (selectedDept === "Cardiology Department"){
-                        Cardiodropdown.style.display = "block";
-                    }
-                    else if (selectedDept === "Gynecology and Obstetrics Department"){
-                        Gynedropdown.style.display= "block";
-                    }
-                    else if (selectedDept === "Pulmonology Department"){
-                        Pulmodropdown.style.display = "block";
-                    }
-                });
-                RadiologyselectedDept.addEventListener("change", function(){
-                    const selectedDept2 = RadiologyselectedDept.value;
-                    //Hide other dropdowns
-                    Ultrasounddropdown.style.display = "none";
-                    Xraydropdown.style.display = "none";
-                    CTdropdown.style.display = "none";
-                    if (selectedDept2 === "Ultrasound"){
-                        Ultrasounddropdown.style.display = "block";
-                        sched = Ultrasoundsched.value;
-                    }
-                    else if (selectedDept2 === "X-ray"){
-                        Xraydropdown.style.display = "block";
-                        sched = Xraysched.value;
-                    }
-                    else if (selectedDept2 === "CT Scan"){
-                        CTdropdown.style.display = "block";
-                        sched = CTsched.value;
-                    }
-                });
-            </script>
-            <script src="fetchdata.js">
-        
-            </script>
-           </div>
-           
-        </body>
-    </html>
+            }
+        </script>
+        <script src="fetchdata.js"></script>
+    </body>
+</html>

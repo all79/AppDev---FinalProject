@@ -19,6 +19,11 @@
 
         <!-- FOOTER -->
         <link rel="stylesheet" href="../appointment.css">
+        <!-- Modal -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!--SMTP-->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+    
     </head>
 
     <body>
@@ -64,7 +69,7 @@
 
                 <!-- APPOINTMENT FORM -->
                 <div class="form-container shadow" style="background: linear-gradient(180deg, #C1D8C3 0%, rgba(193, 216, 195, 0) 100%)">
-                    <form action="/" method="POST">
+                    <form action="/" method="POST" onsubmit="return validateForm()">
                         <div class="container">
                             <br></br>
                             <img src="images/logo.png" alt="logo" id="logo">
@@ -92,7 +97,7 @@
                                 <!-- OPD DROPDOWN -->
                                 <div id="OPD_dropdown" class="col-md-6 w-75" style="margin-left: -60px;display: none">
                                     <label for="opd_selected" class="service"><strong>Select Department: </strong></label>
-                                    <select class="form-control" id="opd_selected">
+                                    <select class="form-control" id="opd_selected" required>
                                         <option value="0">-- Please Select --</option>
                                         <option value="ENT Department" id="entOption">ENT Department</option>
                                         <option value="Opthalmology Department">Opthalmology Department</option>
@@ -180,7 +185,7 @@
                             </div>
 
                             <!-- ULTRASOUND DROPDOWN-->
-                            <div id="Ultrasound_dropdown" class="col-md-6 w-75" style="margin-left: -60px; display: none">
+                            <div id="Ultrasound_dropdown" class="col-md-6 w-75" style="margin-left: 60px; display: none">
                                 <label for="Ultrasound_sched"><strong>Select Schedule:</strong></label>
                                 <select class="form-control" id="Ultrasound_sched">
                                     <option value="00">-- Please Select --</option>
@@ -191,7 +196,7 @@
                             </div>
 
                             <!--X-RAY  DROPDOWN-->
-                            <div id="Xray_dropdown" class="col-md-6 mb-3" style="margin-left: -60px;display: none">
+                            <div id="Xray_dropdown" class="col-md-6 mb-3" style="margin-left: 60px;display: none">
                             <label for="Xray_sched"><strong>Select Schedule:</strong></label>
                             <select class="form-control" id="Xray_sched">
                                 <option value="00">-- Please Select --</option>
@@ -202,7 +207,7 @@
                         </div>  
 
                         <!--CT SCAN  DROPDOWN-->
-                        <div id="CT_dropdown" class="col-md-6 mb-3" style="margin-left: -60px;display: none">
+                        <div id="CT_dropdown" class="col-md-6 mb-3" style="margin-left: 60px;display: none">
                             <label for="CT_sched"><strong>Select Schedule:</strong></label>
                             <select class="form-control" id="CT_sched">
                                 <option value="00">-- Please Select --</option>
@@ -213,60 +218,21 @@
                         </div>  
                     </div>
                     <div class="text-center my-10">
-                        <input type="submit" id="submitFormBtn" class="form-submit" value="Submit" data-toggle="modal" data-target="#successModal" href="http://localhost:3001/about_us.html">
+                        <input type="submit" id="submitFormBtn" class="form-submit" value="Submit" onclick="sendEmail()" >
                     </div>
                     </div>
                 </form>
             </div>
             <!-- Success Modal -->
-            <div class="modal" tabindex="-1" id="successModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <p><i class="fas fa-check-circle check-icon"></i></p>
-                            <p>Thank you for submitting the form. 
-                            </div>
-                        <div class="modal-footer"> <!-- Add a modal-footer div to contain the close button -->
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Your Form Modal -->
-            <div class="modal" tabindex="-1" id="successModal" >
-            <div class="modal-dialog" >
-                <div class="modal-content" >
-                
-                <div class="modal-body"  >
-                    <p><i class="fas fa-check-circle check-icon"></i></p>
-                    <!-- <p><i class="bi bi-check-circle check-icon"></i></p> -->
-                    <p>Thank you for submitting the form. 
-                    Please check your email for further instructions.</p>
-                </div>
-                
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                
-                </div>
-            </div>
-        </div>
+           
         </div>
             <!-- APPOINTMENT FORM -->
             <script>
-                function validateForm() {
-                    var selections = document.querySelectorAll('.selected-service');
-                    for (var i = 0; i < selections.length; i++) {
-                        if (selections[i].value === "0") {
-                            alert("Please select an item for all fields.");
-                            return false; // Prevent form submission
-                        }
-                    }
-                    return true; // Allow form submission
-                }
-
-                document.getElementById("submitFormBtn").addEventListener("click", function (event) {
-                    event.preventDefault(); // Prevent the default form submission behavior
-                    window.location.href = "about_us.html";
-                });
+               
+                // document.getElementById("submitFormBtn").addEventListener("click", function (event) {
+                //     event.preventDefault(); // Prevent the default form submission behavior
+                //     window.location.href = "about_us.html";
+                // });
 
             // Get references to the dropdowns
             const serviceDropdown = document.getElementById("service_opt");
@@ -351,6 +317,130 @@
                     CTdropdown.style.display = "block";
                 }
             });
+
+            function validateForm() {
+        var lastName = document.getElementById("inp1").value;
+        var firstname = document.getElementById("inp2").value;
+        var contactNumber = document.getElementById("inp3").value;
+        var userEmail = document.getElementById("inp4").value;
+        var homeAddress = document.getElementById("inp5").value;
+        var serviceOption = document.getElementById("service_opt").value;
+        var departmentOption = document.getElementById("opd_selected").value;
+        var scheduleOption =
+          document.getElementById("ENT_sched").value 
+          document.getElementById("Opth_sched").value 
+          document.getElementById("Pedia_sched").value 
+          document.getElementById("Cardio_sched").value 
+          document.getElementById("Gyne_sched").value 
+          document.getElementById("Pulmo_sched").value 
+          document.getElementById("Ultrasound_sched").value 
+          document.getElementById("Xray_sched").value 
+          document.getElementById("CT_sched").value;
+
+        //Check if all fields are filled out
+        if (
+          !lastName ||
+          !firstname ||
+          !contactNumber || 
+          !userEmail ||
+          !homeAddress ||
+          serviceOption === "" || 
+          departmentOption === "" ||
+          scheduleOption === "0" 
+        ) {
+          swal(
+            "Warning!",
+            "Please fill out all the fields in the form",
+            "warning"
+          );
+          return false; // Prevent form submission
+        }
+        return true;
+      }
+
+      function sendEmail() {
+        const fnameValue = fname.value;
+        const lnameValue = lname.value;
+        const phoneValue = phone.value;
+        const emailValue = email.value;
+        const addressValue = address.value;
+        const departmentOption =
+          OPDselectedDept.value || RadiologyselectedDept.value;
+        const schedValue =
+          ENTsched.value ||
+          Opthsched.value ||
+          Pediasched.value ||
+          Cardiosched.value ||
+          Gynesched.value ||
+          Pulmosched.value ||
+          Ultrasoundsched.value ||
+          Xraysched.value ||
+          CTsched.value;
+
+        const departmentName =
+          OPDselectedDept.value === "ENT Department"
+            ? "ENT Department"
+            : OPDselectedDept.value === "Opthalmology Department"
+            ? "Opthalmology Department"
+            : OPDselectedDept.value === "Pediatrics Department"
+            ? "Pediatrics Department"
+            : OPDselectedDept.value === "Cardiology Department"
+            ? "Cardiology Department"
+            : OPDselectedDept.value === "Gynecology and Obstetrics Department"
+            ? "Gynecology and Obstetrics Department"
+            : OPDselectedDept.value === "Pulmonology Department"
+            ? "Pulmonology Department"
+            : RadiologyselectedDept.value === "Ultrasound"
+            ? "Ultrasound Department"
+            : RadiologyselectedDept.value === "X-ray"
+            ? "X-ray Department"
+            : RadiologyselectedDept.value === "CT Scan"
+            ? "CT Scan Department"
+            : "";
+
+        const e_body = `<h1><center>Suero General Hospital</center></h1>
+                    <h3><center>Your booking appointment has been confirmed.</center></h3>
+                    <p>Hi there, ${fnameValue}, <br><br>
+                        We hope this email finds you well. This is a confirmation of your upcoming appointment at 
+                        <strong>Suero General Hospital.</strong> We appreciate your trust in our healthcare services!
+                    <p/>
+                    <h3>APPOINTMENT DETAILS</h3>
+                    <ul>
+                        <li><strong>Patient's Name: </strong>${fnameValue} ${lnameValue}</li>
+                        <li><strong>Patient's Contact Number:</strong> ${phoneValue}</li>
+                        <li><strong>Patient's Address:</strong> ${addressValue}</li>
+                        <li><strong>Service: </strong> ${departmentName}</li>
+                        <li><strong>Schedule:</strong> ${schedValue}</li>
+                    </ul>
+                    <h3>REMINDERS:</h3>
+                    <ol>
+                        <li>Arrival: Please arrive at least 15 minutes before your scheduled appointment to complete any necessary paperwork.</li>
+                        <li>Documentation: Bring your photo ID, insurance card, and any relevant medical records or test results.</li>
+                        <li>Cancellation/Rescheduling: If you need to cancel or reschedule your appointment, 
+                            kindly contact us at least 24 hours in advance.</li>
+                    </ol>
+                    <p>We look forward to providing you with quality healthcare. Thank you for choosing Suero General Hospital.</p><br>
+                    <p>Best Regards</p>
+                    <p>Suero General Hospital</p>`;
+
+        if (validateForm()) {
+          Email.send({
+            SecureToken: "ebb0daa0-f116-4a3f-b7d1-8d9f8497bf6c",
+            To: emailValue,
+            From: "suerogeneralhospital0@gmail.com",
+            Subject: "Booking Appointment Confirmed",
+            Body: e_body,
+          }).then((message) => {
+            if (message == "OK") {
+              swal(
+                "Success!",
+                "Your booking appointment has been submitted.",
+                "success"
+              );
+            }
+          });
+        }
+      }
             </script>
             
             <script src="/fetchdata.js" ></script>

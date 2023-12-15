@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Order Form</title>
+        <title>Appointment Form</title>
 
         <!-- CSS Bootstrap Link -->
 
@@ -20,9 +20,9 @@
         <!-- FOOTER -->
         <link rel="stylesheet" href="../appointment.css">
         <!-- Modal -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<!--SMTP-->
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!--SMTP-->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
     
     </head>
 
@@ -42,7 +42,6 @@
                 <a href="services.html">Services</a>
                 <a href="appointment.html">Appointment</a>
                 <a href="doctors.html">Our Doctor</a>
-                
             </nav>
 
             
@@ -69,7 +68,7 @@
 
                 <!-- APPOINTMENT FORM -->
                 <div class="form-container shadow" style="background: linear-gradient(180deg, #C1D8C3 0%, rgba(193, 216, 195, 0) 100%)">
-                    <form action="/" method="POST" onsubmit="return validateForm()">
+                    <form action="/" method="POST" class="app_form" onsubmit="return validateForm()">
                         <div class="container">
                             <br></br>
                             <img src="images/logo.png" alt="logo" id="logo">
@@ -218,13 +217,11 @@
                         </div>  
                     </div>
                     <div class="text-center my-10">
-                        <input type="submit" id="submitFormBtn" class="form-submit" value="Submit" onclick="sendEmail()" >
+                        <input type="submit" id="submitFormBtn" class="form-submit" value="Submit" onclick="sendForm()">
                     </div>
                     </div>
                 </form>
-            </div>
-            <!-- Success Modal -->
-           
+            </div>           
         </div>
             <!-- APPOINTMENT FORM -->
             <script>
@@ -248,7 +245,63 @@
             const Xraydropdown = document.getElementById("Xray_dropdown");
             const CTdropdown = document.getElementById("CT_dropdown");
             const OPDselectedDept = document.getElementById("opd_selected");
-            const RadiologyselectedDept = document.getElementById("radiology_selected");
+            const RadiologyselectedDept = document.getElementById("radiology_selected");            
+
+            const lname = document.getElementById("inp1");
+            const fname = document.getElementById("inp2");
+            const cnum = document.getElementById("inp3");
+            const email = document.getElementById("inp4");
+            const address = document.getElementById("inp5");
+            const service = document.getElementById("service_opt");
+            const opddept = document.getElementById("opd_selected");
+            const raddept = document.getElementById("radiology_selected");
+            const entsched = document.getElementById("ENT_sched");
+            const opthsched = document.getElementById("Opth_sched");
+            const pediasched = document.getElementById("Pedia_sched");
+            const cardiosched = document.getElementById("Cardio_sched");
+            const gynesched = document.getElementById("Gyne_sched");
+            const pulmosched = document.getElementById("Pulmo_sched");
+            const ultrasched = document.getElementById("Ultrasound_sched");
+            const xraysched = document.getElementById("Xray_sched");
+            const ctsched = document.getElementById("CT_sched");
+            const submit = document.getElementsByClassName("app_form")[0];
+
+            submit.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+                fetch('http://localhost:3001/', {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        lname: lname.value,
+                        fname: fname.value,
+                        cnum: cnum.value,
+                        email: email.value,
+                        address: address.value,
+                        service: service.value,
+                        opddept: opddept.value,
+                        raddept: raddept.value,
+                        entsched: entsched.value,
+                        opthsched: opthsched.value,
+                        pediasched: pediasched.value,
+                        cardiosched: cardiosched.value,
+                        gynesched: gynesched.value,
+                        pulmosched: pulmosched.value,
+                        ultrasched: ultrasched.value,
+                        xraysched: xraysched.value,
+                        ctsched: ctsched.value,
+                    }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+                    sendForm();
+                });
 
 
             // Add an event listener to the first dropdown
@@ -317,134 +370,119 @@
                     CTdropdown.style.display = "block";
                 }
             });
-
             function validateForm() {
-        var lastName = document.getElementById("inp1").value;
-        var firstname = document.getElementById("inp2").value;
-        var contactNumber = document.getElementById("inp3").value;
-        var userEmail = document.getElementById("inp4").value;
-        var homeAddress = document.getElementById("inp5").value;
-        var serviceOption = document.getElementById("service_opt").value;
-        var departmentOption = document.getElementById("opd_selected").value;
-        var scheduleOption =
-          document.getElementById("ENT_sched").value 
-          document.getElementById("Opth_sched").value 
-          document.getElementById("Pedia_sched").value 
-          document.getElementById("Cardio_sched").value 
-          document.getElementById("Gyne_sched").value 
-          document.getElementById("Pulmo_sched").value 
-          document.getElementById("Ultrasound_sched").value 
-          document.getElementById("Xray_sched").value 
-          document.getElementById("CT_sched").value;
+                var lastName = document.getElementById("inp1").value;
+                var firstname = document.getElementById("inp2").value;
+                var contactNumber = document.getElementById("inp3").value;
+                var userEmail = document.getElementById("inp4").value;
+                var homeAddress = document.getElementById("inp5").value;
+                var serviceOption = document.getElementById("service_opt").value;
+                var departmentOption = document.getElementById("opd_selected").value;
+                var scheduleOption =
+                document.getElementById("ENT_sched").value 
+                document.getElementById("Opth_sched").value 
+                document.getElementById("Pedia_sched").value 
+                document.getElementById("Cardio_sched").value 
+                document.getElementById("Gyne_sched").value 
+                document.getElementById("Pulmo_sched").value 
+                document.getElementById("Ultrasound_sched").value 
+                document.getElementById("Xray_sched").value 
+                document.getElementById("CT_sched").value;
 
-        //Check if all fields are filled out
-        if (
-          !lastName ||
-          !firstname ||
-          !contactNumber || 
-          !userEmail ||
-          !homeAddress ||
-          serviceOption === "" || 
-          departmentOption === "" ||
-          scheduleOption === "0" 
-        ) {
-          swal(
-            "Warning!",
-            "Please fill out all the fields in the form",
-            "warning"
-          );
-          return false; // Prevent form submission
-        }
-        return true;
-      }
-
-      function sendEmail() {
-        const fnameValue = fname.value;
-        const lnameValue = lname.value;
-        const phoneValue = phone.value;
-        const emailValue = email.value;
-        const addressValue = address.value;
-        const departmentOption =
-          OPDselectedDept.value || RadiologyselectedDept.value;
-        const schedValue =
-          ENTsched.value ||
-          Opthsched.value ||
-          Pediasched.value ||
-          Cardiosched.value ||
-          Gynesched.value ||
-          Pulmosched.value ||
-          Ultrasoundsched.value ||
-          Xraysched.value ||
-          CTsched.value;
-
-        const departmentName =
-          OPDselectedDept.value === "ENT Department"
-            ? "ENT Department"
-            : OPDselectedDept.value === "Opthalmology Department"
-            ? "Opthalmology Department"
-            : OPDselectedDept.value === "Pediatrics Department"
-            ? "Pediatrics Department"
-            : OPDselectedDept.value === "Cardiology Department"
-            ? "Cardiology Department"
-            : OPDselectedDept.value === "Gynecology and Obstetrics Department"
-            ? "Gynecology and Obstetrics Department"
-            : OPDselectedDept.value === "Pulmonology Department"
-            ? "Pulmonology Department"
-            : RadiologyselectedDept.value === "Ultrasound"
-            ? "Ultrasound Department"
-            : RadiologyselectedDept.value === "X-ray"
-            ? "X-ray Department"
-            : RadiologyselectedDept.value === "CT Scan"
-            ? "CT Scan Department"
-            : "";
-
-        const e_body = `<h1><center>Suero General Hospital</center></h1>
-                    <h3><center>Your booking appointment has been confirmed.</center></h3>
-                    <p>Hi there, ${fnameValue}, <br><br>
-                        We hope this email finds you well. This is a confirmation of your upcoming appointment at 
-                        <strong>Suero General Hospital.</strong> We appreciate your trust in our healthcare services!
-                    <p/>
-                    <h3>APPOINTMENT DETAILS</h3>
-                    <ul>
-                        <li><strong>Patient's Name: </strong>${fnameValue} ${lnameValue}</li>
-                        <li><strong>Patient's Contact Number:</strong> ${phoneValue}</li>
-                        <li><strong>Patient's Address:</strong> ${addressValue}</li>
-                        <li><strong>Service: </strong> ${departmentName}</li>
-                        <li><strong>Schedule:</strong> ${schedValue}</li>
-                    </ul>
-                    <h3>REMINDERS:</h3>
-                    <ol>
-                        <li>Arrival: Please arrive at least 15 minutes before your scheduled appointment to complete any necessary paperwork.</li>
-                        <li>Documentation: Bring your photo ID, insurance card, and any relevant medical records or test results.</li>
-                        <li>Cancellation/Rescheduling: If you need to cancel or reschedule your appointment, 
-                            kindly contact us at least 24 hours in advance.</li>
-                    </ol>
-                    <p>We look forward to providing you with quality healthcare. Thank you for choosing Suero General Hospital.</p><br>
-                    <p>Best Regards</p>
-                    <p>Suero General Hospital</p>`;
-
-        if (validateForm()) {
-          Email.send({
-            SecureToken: "ebb0daa0-f116-4a3f-b7d1-8d9f8497bf6c",
-            To: emailValue,
-            From: "suerogeneralhospital0@gmail.com",
-            Subject: "Booking Appointment Confirmed",
-            Body: e_body,
-          }).then((message) => {
-            if (message == "OK") {
-              swal(
-                "Success!",
-                "Your booking appointment has been submitted.",
-                "success"
-              );
+                //Check if all fields are filled out
+                if (
+                !lastName ||
+                !firstname ||
+                !contactNumber || 
+                !userEmail ||
+                !homeAddress ||
+                serviceOption === "" || 
+                departmentOption === "" ||
+                scheduleOption === "0" 
+                ) {
+                swal(
+                    "Warning!",
+                    "Please fill out all the fields in the form",
+                    "warning"
+                );
+                return false; // Prevent form submission
+                }
+                return true;
             }
-          });
-        }
-      }
+            function sendForm() {
+                const fnameValue = fname.value;
+                const lnameValue = lname.value;
+                const phoneValue = cnum.value;
+                const emailValue = email.value;
+                const addressValue = address.value;
+                const departmentOption =
+                OPDselectedDept.value || RadiologyselectedDept.value;
+                const schedValue = entsched.value || opthsched.value || pediasched.value || cardiosched.value ||
+                                    gynesched.value || pulmosched.value || ultrasched.value ||
+                                    xraysched.value || ctsched.value;
+
+                const departmentName =
+                    OPDselectedDept.value === "ENT Department" ? "ENT Department" : 
+                    OPDselectedDept.value === "Opthalmology Department" ? "Opthalmology Department" : 
+                    OPDselectedDept.value === "Pediatrics Department" ? "Pediatrics Department"
+                    : OPDselectedDept.value === "Cardiology Department"
+                    ? "Cardiology Department"
+                    : OPDselectedDept.value === "Gynecology and Obstetrics Department"
+                    ? "Gynecology and Obstetrics Department"
+                    : OPDselectedDept.value === "Pulmonology Department"
+                    ? "Pulmonology Department"
+                    : RadiologyselectedDept.value === "Ultrasound"
+                    ? "Ultrasound Department"
+                    : RadiologyselectedDept.value === "X-ray"
+                    ? "X-ray Department"
+                    : RadiologyselectedDept.value === "CT Scan"
+                    ? "CT Scan Department"
+                    : "";
+
+                const e_body = `<h1><center>Suero General Hospital</center></h1>
+                            <h3><center>Your booking appointment has been confirmed.</center></h3>
+                            <p>Hi there, ${fnameValue}, <br><br>
+                                We hope this email finds you well. This is a confirmation of your upcoming appointment at 
+                                <strong>Suero General Hospital.</strong> We appreciate your trust in our healthcare services!
+                            <p/>
+                            <h3>APPOINTMENT DETAILS</h3>
+                            <ul>
+                                <li><strong>Patient's Name: </strong>${fnameValue} ${lnameValue}</li>
+                                <li><strong>Patient's Contact Number:</strong> ${phoneValue}</li>
+                                <li><strong>Patient's Address:</strong> ${addressValue}</li>
+                                <li><strong>Service: </strong> ${departmentName}</li>
+                                <li><strong>Schedule:</strong> ${schedValue}</li>
+                            </ul>
+                            <h3>REMINDERS:</h3>
+                            <ol>
+                                <li>Arrival: Please arrive at least 15 minutes before your scheduled appointment to complete any necessary paperwork.</li>
+                                <li>Documentation: Bring your photo ID, insurance card, and any relevant medical records or test results.</li>
+                                <li>Cancellation/Rescheduling: If you need to cancel or reschedule your appointment, 
+                                    kindly contact us at least 24 hours in advance.</li>
+                            </ol>
+                            <p>We look forward to providing you with quality healthcare. Thank you for choosing Suero General Hospital.</p><br>
+                            <p>Best Regards</p>
+                            <p>Suero General Hospital</p>`;
+
+                if (validateForm()) {
+                Email.send({
+                    SecureToken: "ebb0daa0-f116-4a3f-b7d1-8d9f8497bf6c",
+                    To: emailValue,
+                    From: "suerogeneralhospital0@gmail.com",
+                    Subject: "Booking Appointment Confirmed",
+                    Body: e_body,
+                }).then((message) => {
+                    if (message == "OK") {
+                    swal(
+                        "Success!",
+                        "Your booking appointment has been submitted.",
+                        "success"
+                    );
+                    }
+                });
+                }
+            }
             </script>
-            
-            <script src="/fetchdata.js" ></script>
         </div>
-            
     </body>
     </html>

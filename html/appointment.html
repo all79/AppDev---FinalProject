@@ -20,7 +20,7 @@
         <!-- FOOTER -->
         <link rel="stylesheet" href="../appointment.css">
         <!-- Modal -->
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!--SMTP-->
         <script src="https://smtpjs.com/v3/smtp.js"></script>
     
@@ -38,6 +38,7 @@
 
 
             <nav class="navbar" style="text-decoration: none;">
+                <a href="index.html">Home</a>
                 <a href="about_us.html">About Us</a>
                 <a href="services.html">Services</a>
                 <a href="appointment.html">Appointment</a>
@@ -473,11 +474,18 @@
                     Body: e_body,
                 }).then((message) => {
                     if (message == "OK") {
-                    swal(
-                        "Success!",
-                        "Your booking appointment has been submitted.",
-                        "success"
-                    );
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'Your booking appointment has been submitted.',
+                            icon: 'success',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'index.html';
+                            }
+                        });
                     }
                 });
                 }
